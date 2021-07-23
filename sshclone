@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-if [[ $# -le 1 ]]; then
-    echo "Error: 引数が不足しています" 1>&2
-    exit 1
-fi
-
-git clone git@github.com:${@}

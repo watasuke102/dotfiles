@@ -1,0 +1,18 @@
+# 第1引数の数が第2引数未満だったら1を返す
+# ex: `check_arg $# 0 
+local check_arg() {
+  if [[ ${1} -lt ${2} ]]; then
+    echo "Error: 引数が不足しています" 1>&2
+    return 1
+  fi
+}
+
+sshclone() {
+  check_arg $# 1 || return 1
+  git clone git@github.com:${@}
+}
+
+asm() {
+  check_arg $# 1 || return 1
+  nasm -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
+}

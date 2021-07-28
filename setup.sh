@@ -11,12 +11,18 @@ echo -n "[y/N] "
 read -n1 input 
 [[ ${input} != "y" ]] && exit 1
 
-ln -sf  program/dotfiles/.zshrc     ~/.zshrc
-ln -sf  program/dotfiles/.zshrc     ~/.zshrc
-ln -sf  program/dotfiles/.aliases   ~/.aliases
-ln -sf  program/dotfiles/.func      ~/.func
-ln -sf  program/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sdf program/dotfiles/nvim       ~/.config/nvim
+cd $(dirname ${0})
+
+echo "Downloading dependences..."
+curl https://0e0.pw/oHUu -o ~/.git-prompt.sh 
+
+echo "Creating symlink..."
+ln -sf  .zshrc     ~/.zshrc
+ln -sf  .zshrc     ~/.zshrc
+ln -sf  .aliases   ~/.aliases
+ln -sf  .func      ~/.func
+ln -sf  .tmux.conf ~/.tmux.conf
+ln -sdf nvim       ~/.config/nvim
 
 echo "All done!"
 

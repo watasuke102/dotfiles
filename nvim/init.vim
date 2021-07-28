@@ -56,9 +56,9 @@ inoremap <C-l> <Right>
 
 noremap <C-j> ddp
 noremap <C-k> ddkP
-noremap <C-q> <C-\><C-n>
 
 " Terminal
+tnoremap <C-q> <C-\><C-n>
 if has('nvim')
   command! -nargs=* Term split | terminal <args>
   command! -nargs=* Termv vsplit | terminal <args>

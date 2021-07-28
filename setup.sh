@@ -1,4 +1,6 @@
 #/usr/bin/env bash
+echo "this script doesnt work"
+exit 1
 echo "Following files and directory will be overwritten. Do you want to continue?"
 echo "~/.zshrc"
 echo "~/.zshrc"
@@ -9,6 +11,7 @@ echo "~/.config/nvim/"
 
 echo -n "[y/N] "
 read -n1 input 
+echo 
 [[ ${input} != "y" ]] && exit 1
 
 cd $(dirname ${0})

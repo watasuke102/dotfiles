@@ -17,11 +17,10 @@ autoload -Uz _zinit
 zplugin light zsh-users/zsh-syntax-highlighting
 zplugin light zsh-users/zsh-autosuggestions
 zplugin light zsh-users/zsh-completions
-zplugin light jimhester/per-directory-history
+zplugin light zsh-users/zsh-history-substring-search
 
 ##################################
 ## End of plugin
-
 
 # disable beep
 setopt nolistbeep
@@ -47,19 +46,23 @@ autoload -Uz colors && colors
 # functions
 [[ -f ~/.func ]] && source ~/.func
 
-
 ## Key binds
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
+bindkey "^[[H"  beginning-of-line
+bindkey "^[[F"  end-of-line
+bindkey "^[[3~" delete-char
 # move word by Ctrl+Left or Right
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
+## Value
+export EDITOR=nvim
 
 ## prompt
-PROMPT="[%*] %B%F{cyan}%~%f%b
-%# "
+setopt PROMPT_SUBST
+[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+PROMPT='%F{green}[%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
+%# '
 
 ## Display (for WSL)
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+

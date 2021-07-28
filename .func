@@ -14,5 +14,5 @@ sshclone() {
 
 asm() {
   check_arg $# 1 || return 1
-  nasm -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
+  nasm -g -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
 }

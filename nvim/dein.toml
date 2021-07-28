@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+#[[plugins]]
+#repo = 'ryanoasis/vim-devicons'
+
+#[[plugins]]
+#repo = 'ryanoasis/nerd-fonts'
+
+# Color scheme
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'hzchirs/vim-material'
+

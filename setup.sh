@@ -14,7 +14,8 @@ read -n1 input
 cd $(dirname ${0})
 
 echo "Downloading dependences..."
-curl https://0e0.pw/oHUu -o ~/.git-prompt.sh 
+[[ ! -e ~/.git-prompt.sh ]] && curl https://0e0.pw/oHUu -o ~/.git-prompt.sh 
+[[ ! -e ~/.cache/dein ]] && curl https://0e0.pw/BZMr | sh ~/.cache/dein
 
 echo "Creating symlink..."
 ln -sf  .zshrc     ~/.zshrc

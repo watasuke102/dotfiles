@@ -60,6 +60,11 @@ export EDITOR=nvim
 ## prompt
 setopt PROMPT_SUBST
 [[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+# addされてないファイルがあるとき*, add済みかつcommitされていないとき+
+GIT_PS1_SHOWDIRTYSTATE=true
+# addされていない新規ファイルがあるとき%
+GIT_PS1_SHOWUNTRACKEDFILES=true
+
 PROMPT='%F{green}[%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
 %# '
 

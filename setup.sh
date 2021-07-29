@@ -1,32 +1,38 @@
 #/usr/bin/env bash
-echo "this script doesnt work"
-exit 1
-echo "Following files and directory will be overwritten. Do you want to continue?"
-echo "~/.zshrc"
-echo "~/.zshrc"
-echo "~/.aliases"
-echo "~/.func"
-echo "~/.tmux.conf"
-echo "~/.config/nvim/"
 
-echo -n "[y/N] "
+echo -ne "\033[32m"
+echo "========================================="
+echo " Dotfiles - watasuke102                  "
+echo " https://github.com/watasuke102/dotfiles "
+echo "========================================="
+echo -ne "\033[39m"
+
+cat << END
+Following files and directory will be overwritten.
+ * ~/.zshrc
+ * ~/.aliases
+ * ~/.func
+ * ~/.tmux.conf
+ * ~/.config/nvim/
+END
+
+echo -n "Do you want to continue? [y/N] "
 read -n1 input 
 echo 
 [[ ${input} != "y" ]] && exit 1
 
-cd $(dirname ${0})
+current=$(cd $(dirname ${0}); pwd)
 
-echo "Downloading dependences..."
+echo -e "\033[36m[info] Downloading dependences...\033[39m"
 [[ ! -e ~/.git-prompt.sh ]] && curl https://0e0.pw/oHUu -o ~/.git-prompt.sh 
 [[ ! -e ~/.cache/dein ]] && curl https://0e0.pw/BZMr | sh ~/.cache/dein
 
-echo "Creating symlink..."
-ln -sf  .zshrc     ~/.zshrc
-ln -sf  .zshrc     ~/.zshrc
-ln -sf  .aliases   ~/.aliases
-ln -sf  .func      ~/.func
-ln -sf  .tmux.conf ~/.tmux.conf
-ln -sdf nvim       ~/.config/nvim
+echo -e "\033[36m[info] Creating symlink...\033[39m"
+ln -snvf  ${current}/.zshrc     ~/.zshrc
+ln -snvf  ${current}/.aliases   ~/.aliases
+ln -snvf  ${current}/.func      ~/.func
+ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
+ln -snvfd ${current}/nvim       ~/.config/nvim
 
-echo "All done!"
+echo -e "\033[32m[info] All done!\033[32m"
 

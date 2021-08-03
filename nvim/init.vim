@@ -47,15 +47,20 @@ let mapleader = "\<Space>"
 
 " bind
 inoremap <silent> jj <ESC>
-" vnoremap <silent> jj <ESC>
 noremap  <Space>w :<C-u>w<CR>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+inoremap <C-Space> <C-n>
+noremap <C-Tab> :bnext
+noremap <C-S-Tab> :bprevious
+
 noremap <C-j> ddp
 noremap <C-k> ddkP
+
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 
 " Terminal
 tnoremap <C-q> <C-\><C-n>
@@ -65,5 +70,35 @@ if has('nvim')
 endif
 
 " Plugin settings--------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=237
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+let g:winresizser_vert_resize = 2
+let g:winresizser_horiz_resize = 2
+
+let g:rustfmt_autosave = 1
+autocmd FileType c ClangFormatAutoEnable
+
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 

@@ -1,19 +1,48 @@
+# general
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-#[[plugins]]
-#repo = 'ryanoasis/vim-devicons'
+[[plugins]]
+repo = 'ryanoasis/nerd-fonts'
 
-#[[plugins]]
-#repo = 'ryanoasis/nerd-fonts'
+## Git操作
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
-# Color scheme
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+## C-eでウィンドウをリサイズ
+[[plugins]]
+repo = 'simeji/winresizer'
+
+## LSPによる補完など
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+
+
+# Language
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+
+# Looks
 [[plugins]]
 repo = 'joshdick/onedark.vim'
 
 [[plugins]]
-repo = 'hzchirs/vim-material'
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
 

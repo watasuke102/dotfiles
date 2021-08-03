@@ -7,6 +7,10 @@ local check_arg() {
   fi
 }
 
+calc() {
+  python3 -c "print(${@})"
+}
+
 sshclone() {
   check_arg $# 1 || return 1
   git clone git@github.com:${@}

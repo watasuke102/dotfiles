@@ -28,15 +28,13 @@ endif
 " General------------------------------------
 syntax enable
 colorscheme onedark
-set number
-set title
+set number title list
+set whichwrap=b,s,h,l<,>,[,] "行末から下の行の行頭へ移動
 set encoding=utf-8
 
 " Tab
-set smartindent
-set smarttab
+set smartindent smarttab expandtab
 set shiftwidth=2  "挿入する空白の量
-set expandtab
 
 set hls
 set clipboard+=unnamed,unnamedplus "クリップボードにコピー
@@ -45,7 +43,6 @@ set clipboard+=unnamed,unnamedplus "クリップボードにコピー
 " Key
 let mapleader = "\<Space>"
 
-" bind
 inoremap <silent> jj <ESC>
 noremap  <Space>w :<C-u>w<CR>
 inoremap <C-h> <Left>
@@ -69,6 +66,11 @@ if has('nvim')
   command! -nargs=* Termv vsplit | terminal <args>
 endif
 
+
+" FileType Setting-------------------------
+autocmd FileType asm set noexpandtab shiftwidth=4
+
+
 " Plugin settings--------------------------
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 1
@@ -82,18 +84,10 @@ let g:winresizser_vert_resize = 2
 let g:winresizser_horiz_resize = 2
 
 let g:rustfmt_autosave = 1
-autocmd FileType c ClangFormatAutoEnable
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ coc#refresh()
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Remap keys for gotos

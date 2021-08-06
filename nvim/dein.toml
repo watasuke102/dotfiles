@@ -15,6 +15,9 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
+
 ## C-eでウィンドウをリサイズ
 [[plugins]]
 repo = 'simeji/winresizer'

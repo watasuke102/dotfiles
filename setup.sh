@@ -24,8 +24,8 @@ echo
 current=$(cd $(dirname ${0}); pwd)
 
 echo -e "\033[36m[info] Downloading dependences...\033[39m"
-[[ ! -e ~/.git-prompt.sh ]] && curl https://0e0.pw/oHUu -o ~/.git-prompt.sh 
-[[ ! -e ~/.cache/dein ]] && curl https://0e0.pw/BZMr | sh ~/.cache/dein
+[[ ! -e ~/.git-prompt.sh ]] && curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh 
+[[ ! -e ~/.cache/dein ]] && curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh | sh - ~/.cache/dein
 
 echo -e "\033[36m[info] Creating symlink...\033[39m"
 ln -snvf  ${current}/.zshrc     ~/.zshrc

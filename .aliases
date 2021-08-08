@@ -1,3 +1,4 @@
+type lsd 2>&1 > /dev/null && alias ls="lsd"
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -al"

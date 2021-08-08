@@ -14,6 +14,7 @@ Following files and directory will be overwritten.
  * ~/.func
  * ~/.tmux.conf
  * ~/.config/nvim/
+ * ~/.config/polybar
 END
 
 echo -n "Do you want to continue? [y/N] "
@@ -35,6 +36,7 @@ ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.func      ~/.func
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 ln -snvfd ${current}/nvim       ~/.config/nvim
+ln -snvfd ${current}/polybar    ~/.config/polybar
 
 echo -e "\033[32m[info] All done!\033[32m"
 

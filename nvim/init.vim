@@ -28,7 +28,7 @@ endif
 " General------------------------------------
 syntax enable
 colorscheme onedark
-set number title list
+set number title list hidden
 set whichwrap=b,s,h,l<,>,[,] "行末から下の行の行頭へ移動
 set encoding=utf-8
 
@@ -50,9 +50,8 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
-inoremap <C-Space> <C-n>
-noremap <C-Tab> :bnext
-noremap <C-S-Tab> :bprevious
+noremap <Space>h :bprev<CR>
+noremap <Space>l :bnext<CR>
 
 noremap <C-j> ddp
 noremap <C-k> ddkP

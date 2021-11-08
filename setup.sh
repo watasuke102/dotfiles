@@ -9,9 +9,10 @@ echo -ne "\033[39m"
 
 cat << END
 Following files and directory will be overwritten.
- * ~/.zshrc
- * ~/.aliases
  * ~/.func
+ * ~/.zshrc
+ * ~/.profile
+ * ~/.aliases
  * ~/.tmux.conf
  * ~/.config/nvim/
  * ~/.config/polybar
@@ -31,9 +32,10 @@ installer_tmp=$(mktemp)
 [[ ! -e ~/.cache/dein ]] && curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${installer_tmp} && ${installer_tmp} ~/.cache/dein
 
 echo -e "\033[36m[info] Creating symlink...\033[39m"
-ln -snvf  ${current}/.zshrc     ~/.zshrc
-ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.func      ~/.func
+ln -snvf  ${current}/.zshrc     ~/.zshrc
+ln -snvf  ${current}/.profile   ~/.profile
+ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 ln -snvfd ${current}/nvim       ~/.config/nvim
 ln -snvfd ${current}/polybar    ~/.config/polybar

@@ -45,6 +45,8 @@ autoload -Uz colors && colors
 [[ -f ~/.aliases ]] && source ~/.aliases
 # functions
 [[ -f ~/.func ]] && source ~/.func
+# profile
+[[ -f ~/.profile ]] && source ~/.profile
 
 ## Key binds
 bindkey "^[[H"  beginning-of-line
@@ -65,9 +67,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # addされていない新規ファイルがあるとき%
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
+# for WSL
 PROMPT='%F{green}[%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
 %# '
-
-# for WSL
-[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct" 
 

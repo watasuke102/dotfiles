@@ -5,4 +5,5 @@ alias lla="ls -al"
 alias lal="ls -al"
 alias cls="clear"
 alias vim="nvim"
+alias :q="exit"
 

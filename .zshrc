@@ -49,12 +49,25 @@ autoload -Uz colors && colors
 [[ -f ~/.profile ]] && source ~/.profile
 
 ## Key binds
+# Home
+bindkey "^[[1~"  beginning-of-line
 bindkey "^[[H"  beginning-of-line
-bindkey "^[[F"  end-of-line
+# Insert
+bindkey -r "^[[2"
+bindkey -r "^[[2~"
+# Delete
 bindkey "^[[3~" delete-char
+# End
+bindkey "^[[4~"  end-of-line
+bindkey "^[[F"  end-of-line
+# PageUp
+bindkey -r "^[[5"
+# PageDown
+bindkey -r "^[[6"
+
 # move word by Ctrl+Left or Right
-bindkey ";5C" forward-word
-bindkey ";5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 ## Value
 export EDITOR=nvim
@@ -67,7 +80,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # addされていない新規ファイルがあるとき%
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
-# for WSL
 PROMPT='%F{green}[%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
 %# '
 

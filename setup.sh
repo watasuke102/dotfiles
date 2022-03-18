@@ -25,11 +25,19 @@ echo
 
 current=$(cd $(dirname ${0}); pwd)
 
-echo -e "\033[36m[info] Downloading dependences...\033[39m"
-[[ ! -e ~/.git-prompt.sh ]] && curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh 
+echo -e "\033[36m[info] Downloading '.git-prompt.sh'...\033[39m"
+if [[ ! -e ~/.git-prompt.sh ]]; then
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh 
+fi
 
+echo -e "\033[36m[info] Setting up dein.vim...\033[39m"
 installer_tmp=$(mktemp)
-[[ ! -e ~/.cache/dein ]] && curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${installer_tmp} && ${installer_tmp} ~/.cache/dein
+if [[ ! -e ~/.cache/dein ]]; then
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${installer_tmp}
+  chmod +x ${installer_tmp}
+  ${installer_tmp} ~/.cache/dein
+  rm -f ${installer_tmp}
+fi
 
 echo -e "\033[36m[info] Creating symlink...\033[39m"
 ln -snvf  ${current}/.func      ~/.func

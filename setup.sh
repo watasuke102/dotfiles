@@ -14,20 +14,24 @@ Following files and directory will be overwritten.
  * ~/.profile
  * ~/.aliases
  * ~/.tmux.conf
+ * ~/.config/i3
  * ~/.config/nvim/
- * ~/.config/polybar
+ * ~/.config/rofi/
+ * ~/.config/dunst/
+ * ~/.config/polybar/
+ * ~/.config/alacritty/
 END
 
 echo -n "Do you want to continue? [y/N] "
-read -n1 input 
-echo 
-[[ ${input} != "y" ]] && exit 1
+read -n1 input
+echo
+[[ ${input} != "y" ]] && echo "aborting."; exit 1
 
 current=$(cd $(dirname ${0}); pwd)
 
 echo -e "\033[36m[info] Downloading '.git-prompt.sh'...\033[39m"
 if [[ ! -e ~/.git-prompt.sh ]]; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh 
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 fi
 
 echo -e "\033[36m[info] Setting up dein.vim...\033[39m"
@@ -45,8 +49,13 @@ ln -snvf  ${current}/.zshrc     ~/.zshrc
 ln -snvf  ${current}/.profile   ~/.profile
 ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
-ln -snvfd ${current}/nvim       ~/.config/nvim
-ln -snvfd ${current}/polybar    ~/.config/polybar
+
+ln -snvfd ${current}/.config/i3        ~/.config/i3
+ln -snvfd ${current}/.config/nvim      ~/.config/nvim
+ln -snvfd ${current}/.config/rofi      ~/.config/rofi
+ln -snvfd ${current}/.config/dunst     ~/.config/dunst
+ln -snvfd ${current}/.config/polybar   ~/.config/polybar
+ln -snvfd ${current}/.config/alacritty ~/.config/alacritty
 
 echo -e "\033[32m[info] All done!\033[32m"
 

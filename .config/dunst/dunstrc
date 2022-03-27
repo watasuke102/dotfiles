@@ -1,0 +1,45 @@
+[global]
+monitor         = 0
+follow          = none
+sort            = true
+word_wrap       = true
+
+## don't show URL and action
+show_indicators = false
+
+# format
+markup = full
+format = "<b>%a - %s</b>\n%b\n%p"
+
+# icon
+icon_theme = "candy-icons"
+#icon_path = /usr/share/icons/candy-icons/apps/scalable;/usr/share/icons/candy-icons/devices/scalable;/usr/share/icons/candy-icons/minetypes/scalable;/usr/share/icons/candy-icons/places/16;/usr/share/icons/candy-icons/places/48;/usr/share/icons/candy-icons/preferences/scalable
+icon_position = left
+max_icon_size = 64
+
+# appearance
+width              = 300
+padding            = 10
+horizontal_padding = 15
+separator_height   = 10
+transparency       = 10
+font               = M+ 1p 9
+
+[urgency_low]
+frame_color = "#00000000"
+background  = "#282c34"
+foreground  = "#abb2bf"
+timeout     = 10
+
+[urgency_normal]
+frame_color = "#00000000"
+background  = "#282c34"
+foreground  = "#abb2bf"
+timeout     = 10
+
+[urgency_critical]
+frame_color = "#00000000"
+background  = "#eb6e67"
+foreground  = "#abb2bf"
+timeout     = 10
+

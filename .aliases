@@ -1,9 +1,17 @@
-type lsd 2>&1 > /dev/null && alias ls="lsd"
+# check command exists
+local exist() {
+  type $1 2>&1 > /dev/null
+}
+exist exa  && alias ls="exa --icons --git"; alias tree="ls --tree"
+exist nvim && alias vim="nvim"
+exist bat  && alias cat="bat"
+
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -al"
 alias lal="ls -al"
 alias cls="clear"
-alias vim="nvim"
 alias :q="exit"
+
+
 

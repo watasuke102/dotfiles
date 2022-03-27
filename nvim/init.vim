@@ -28,7 +28,7 @@ endif
 " General------------------------------------
 syntax enable
 colorscheme onedark
-set number title list hidden
+set number relativenumber title list hidden
 set whichwrap=b,s,h,l<,>,[,] "行末から下の行の行頭へ移動
 set encoding=utf-8
 
@@ -79,6 +79,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+let g:winresizer_start_key = '<C-q>'
 let g:winresizser_vert_resize = 2
 let g:winresizser_horiz_resize = 2
 

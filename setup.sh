@@ -25,7 +25,10 @@ END
 echo -n "Do you want to continue? [y/N] "
 read -n1 input
 echo
-[[ ${input} != "y" ]] && echo "aborting."; exit 1
+if [[ ${input} != "y" ]]; then
+  echo "aborting."
+  exit 1
+fi
 
 current=$(cd $(dirname ${0}); pwd)
 

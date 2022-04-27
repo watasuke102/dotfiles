@@ -149,13 +149,17 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # short resize
+        # short
+        bindsym Shift+h resize shrink width  5 px or 5 ppt
+        bindsym Shift+j resize grow   height 5 px or 5 ppt
+        bindsym Shift+k resize shrink height 5 px or 5 ppt
+        bindsym Shift+l resize grow   width  5 px or 5 ppt
+        # normal
         bindsym h resize shrink width  10 px or 10 ppt
         bindsym j resize grow   height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow   width  10 px or 10 ppt
- 
-        # dynamic resize
+        # big
         bindsym $mod+h resize shrink width  40 px or 40 ppt
         bindsym $mod+j resize grow   height 40 px or 40 ppt
         bindsym $mod+k resize shrink height 40 px or 40 ppt
@@ -169,13 +173,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "move" {
-        # short move
+        # short
+        bindsym h move left  10 px
+        bindsym j move down  10 px
+        bindsym k move up    10 px
+        bindsym l move right 10 px
+        # normal
         bindsym h move left  20 px
         bindsym j move down  20 px
         bindsym k move up    20 px
         bindsym l move right 20 px
- 
-        # dynamic move
+        # big
         bindsym $mod+h move left  40 px
         bindsym $mod+j move down  40 px
         bindsym $mod+k move up    40 px

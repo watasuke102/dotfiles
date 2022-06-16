@@ -4,7 +4,6 @@ local exist() {
 }
 exist exa  && alias ls="exa --icons --git"; alias tree="ls --tree"
 exist nvim && alias vim="nvim"
-exist bat  && alias cat="bat"
 
 alias ll="ls -l"
 alias la="ls -a"

@@ -10,6 +10,7 @@ gaps inner 6
 for_window [class="^.*"] border pixel 2
 ## mod key
 set $mod Mod4
+workspace 4 output DVI-D-0
 
 
 # Softwares
@@ -201,7 +202,7 @@ bindsym $mod+m mode "move"
 client.focused          #282c34 #282c34 #abb2bf #95cc8fee #95ee8f88
 client.focused_inactive #282c34 #282c34 #abb2bf #282c3466 #282c3488
 client.unfocused        #282c34 #282c34 #abb2bf #282c3466 #282c3488
-client.urgent           #282c34 #282c34 #abb2bf #282c3466 #282c3488
+client.urgent           #282c34 #282c34 #abb2bf #e06c75ee #e06c7588
 client.placeholder      #282c34 #282c34 #abb2bf #282c3466 #282c3488
 client.background       #282c34
 

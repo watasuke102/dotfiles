@@ -8,6 +8,7 @@
   yellow:     #f8c456;
   blue:       #6eaafb;
   mangenta:   #d886f3;
+  purple:     #c678dd;
   cyan:       #6cdcf7;
   emphasis:   #50536b;
   text:       #dfdfdf;
@@ -18,7 +19,6 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "Knack Nerd Font 11";
   text-color: @text;
 }
 

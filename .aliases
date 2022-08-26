@@ -11,6 +11,5 @@ alias lla="ls -al"
 alias lal="ls -al"
 alias cls="clear"
 alias :q="exit"
-
-
+alias reloadrc="source ~/.zshrc"
 

@@ -23,7 +23,7 @@ comp() {
 
   # コマンドを実行する
   echo "${separator}"
-  bash -c "${run}"
+  bash -c "${run} 2>&1"
   echo "${separator}"
 }
 
@@ -58,3 +58,4 @@ asm() {
   check_arg $# 1 || return 1
   nasm -g -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
 }
+

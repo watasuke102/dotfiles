@@ -11,7 +11,6 @@ cat << END
 Following files and directory will be overwritten.
  * ~/.func
  * ~/.zshrc
- * ~/.profile
  * ~/.aliases
  * ~/.tmux.conf
  * ~/.config/i3
@@ -49,7 +48,6 @@ fi
 echo -e "\033[36m[info] Creating symlink...\033[39m"
 ln -snvf  ${current}/.func      ~/.func
 ln -snvf  ${current}/.zshrc     ~/.zshrc
-ln -snvf  ${current}/.profile   ~/.profile
 ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 

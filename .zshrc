@@ -71,6 +71,10 @@ bindkey "^[[1;5D" backward-word
 
 ## Value
 export EDITOR=nvim
+export GPG_TTY=$(tty)
+export QT_QPA_PLATFORMTHEME="gtk2"
+export WLR_NO_HARDWARE_CURSORS=1
+#[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 
 ## prompt
 setopt PROMPT_SUBST
@@ -80,6 +84,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # addされていない新規ファイルがあるとき%
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
-PROMPT='%F{green}[%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
+PROMPT='%F{green}[${PROMPT_PREFIX}%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
 %# '
 

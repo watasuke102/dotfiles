@@ -56,8 +56,6 @@ noremap <Space>l :bnext<CR>
 noremap <C-j> ddp
 noremap <C-k> ddkP
 
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-
 " Terminal
 tnoremap <C-q> <C-\><C-n>
 if has('nvim')
@@ -87,7 +85,7 @@ let g:rustfmt_autosave = 1
 autocmd FileType c,cpp ClangFormatAutoEnable
 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><CR> coc#pum#visible() ? "<C-y>" : "<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Remap keys for gotos

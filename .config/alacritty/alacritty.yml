@@ -1,6 +1,5 @@
 window:
   dynamic_title: true
-  gtk_theme_variant: dark
 
 cursor:
   style:

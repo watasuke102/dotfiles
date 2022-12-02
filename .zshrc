@@ -71,6 +71,7 @@ bindkey "^[[1;5D" backward-word
 
 ## Value
 export EDITOR=nvim
+export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME="gtk2"
 export WLR_NO_HARDWARE_CURSORS=1

@@ -26,11 +26,12 @@ zplugin light zsh-users/zsh-history-substring-search
 setopt nolistbeep
 setopt no_beep
 
+setopt auto_cd
+setopt printexitvalue
+
 # enable complete
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
-setopt completealiases
-setopt auto_cd
 
 # save history
 HISTFILE=~/.histfile

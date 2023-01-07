@@ -75,6 +75,10 @@ export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME="gtk2"
 export WLR_NO_HARDWARE_CURSORS=1
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
+export CC=clang
+export CXX=clang++
 #[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 
 ## prompt

@@ -7,5 +7,4 @@
 	ch = checkout
 	b  = branch
 	f  = fetch
-	p  = pull
-
+	sync = remote update

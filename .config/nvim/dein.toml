@@ -5,6 +5,9 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
 ## Git操作
 [[plugins]]
 repo = 'tpope/vim-fugitive'

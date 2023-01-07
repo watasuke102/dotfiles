@@ -43,8 +43,8 @@ set clipboard+=unnamed,unnamedplus "クリップボードにコピー
 " Key
 let mapleader = "\<Space>"
 
-inoremap <silent> jj <ESC>
 noremap  <Space>w :<C-u>w<CR>
+noremap  <C-h> :<C-u>noh<CR>
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>

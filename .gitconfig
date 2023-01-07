@@ -1,0 +1,11 @@
+[commit]
+	gpgsign = true
+[user]
+	email = watasuke102@gmail.com
+	name = watasuke102
+[alias]
+	ch = checkout
+	b  = branch
+	f  = fetch
+	p  = pull
+

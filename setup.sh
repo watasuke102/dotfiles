@@ -45,6 +45,12 @@ if [[ ! -e ~/.cache/dein ]]; then
   rm -f ${installer_tmp}
 fi
 
+echo -e "\033[36m[info] Setting up gitconfig...\033[39m"
+cat << END >> ~/.gitconfig
+[include]
+	path = ${current}/.gitconfig
+END
+
 echo -e "\033[36m[info] Creating symlink...\033[39m"
 ln -snvf  ${current}/.func      ~/.func
 ln -snvf  ${current}/.zshrc     ~/.zshrc

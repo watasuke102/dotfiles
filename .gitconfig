@@ -7,4 +7,6 @@
 	ch = checkout
 	b  = branch
 	f  = fetch
-	sync = remote update
+	sync = remote update -p
+	spu  = stash push
+	spo  = stash pop

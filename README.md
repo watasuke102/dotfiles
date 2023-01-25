@@ -13,7 +13,7 @@ bash setup.sh
 if you want to use full of this environment, install this packages with AUR helper on Arch Linux:
 
 ```
-alacritty bat dex dunst exa flameshot i3-gaps i3lock-color neovim nitrogen picom polybar rofi rofi-greenclip ttf-myricam zsh
+alacritty bat dex dunst exa flameshot i3-wm i3lock-color neovim nitrogen picom polybar rofi rofi-greenclip ttf-myricam zsh
 ```
 
 ### notice

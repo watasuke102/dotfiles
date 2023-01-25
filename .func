@@ -49,6 +49,10 @@ calc() {
   python3 -c "print(${@})"
 }
 
+mkcd() {
+  mkdir -p "$@" && cd "$1"
+}
+
 local git_arg() {
   check_arg $# 1 || return 1
   repo="$1"

@@ -31,18 +31,18 @@ fi
 
 current=$(cd $(dirname ${0}); pwd)
 
-echo -e "\033[36m[info] Downloading '.git-prompt.sh'...\033[39m"
-if [[ ! -e ~/.git-prompt.sh ]]; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
-fi
-
 echo -e "\033[36m[info] Setting up dein.vim...\033[39m"
 installer_tmp=$(mktemp)
 if [[ ! -e ~/.cache/dein ]]; then
-  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${installer_tmp}
-  chmod +x ${installer_tmp}
-  ${installer_tmp} ~/.cache/dein
+  curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh -o "$installer_tmp"
+  echo 1 | sh ${installer_tmp} -uNC
+  mv ~/.config/nvim/init.vim.pre-dein-vim ~/.config/nvim/init.vim
   rm -f ${installer_tmp}
+fi
+
+echo -e "\033[36m[info] Downloading '.git-prompt.sh'...\033[39m"
+if [[ ! -e ~/.git-prompt.sh ]]; then
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 fi
 
 echo -e "\033[36m[info] Setting up gitconfig...\033[39m"

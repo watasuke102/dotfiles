@@ -52,6 +52,7 @@ cat << END >> ~/.gitconfig
 END
 
 echo -e "\033[36m[info] Creating symlink...\033[39m"
+mkdir -p ~/.config
 ln -snvf  ${current}/.func      ~/.func
 ln -snvf  ${current}/.zshrc     ~/.zshrc
 ln -snvf  ${current}/.aliases   ~/.aliases

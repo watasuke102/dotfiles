@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 echo -ne "\033[32m"
 echo "========================================="

@@ -1,0 +1,13 @@
+virtual_modifiers:
+  - CapsLock
+keymap:
+  - remap:
+      Capslock-h: { with_mark: left }
+      Capslock-j: { with_mark: down }
+      Capslock-k: { with_mark: up }
+      Capslock-l: { with_mark: right }
+      Capslock-w: { with_mark: pageup }
+      Capslock-s: { with_mark: pagedown }
+      Capslock-a: { with_mark: home }
+      Capslock-d: { with_mark: end }
+    exact_match: false

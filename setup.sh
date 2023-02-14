@@ -13,6 +13,7 @@ Following files and directory will be overwritten.
  * ~/.zshrc
  * ~/.aliases
  * ~/.tmux.conf
+ * ~/.config/xremap.yml
  * ~/.config/i3
  * ~/.config/nvim/
  * ~/.config/rofi/
@@ -60,12 +61,13 @@ ln -snvf  ${current}/.zshrc     ~/.zshrc
 ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 
-ln -snvfd ${current}/.config/i3        ~/.config/i3
-ln -snvfd ${current}/.config/nvim      ~/.config/nvim
-ln -snvfd ${current}/.config/rofi      ~/.config/rofi
-ln -snvfd ${current}/.config/dunst     ~/.config/dunst
-ln -snvfd ${current}/.config/polybar   ~/.config/polybar
-ln -snvfd ${current}/.config/alacritty ~/.config/alacritty
+ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.xml
+ln -snvfd ${current}/.config/i3         ~/.config/i3
+ln -snvfd ${current}/.config/nvim       ~/.config/nvim
+ln -snvfd ${current}/.config/rofi       ~/.config/rofi
+ln -snvfd ${current}/.config/dunst      ~/.config/dunst
+ln -snvfd ${current}/.config/polybar    ~/.config/polybar
+ln -snvfd ${current}/.config/alacritty  ~/.config/alacritty
 
 echo -e "\033[32m[info] All done!\033[32m"
 

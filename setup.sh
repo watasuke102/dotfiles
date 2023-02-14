@@ -61,7 +61,7 @@ ln -snvf  ${current}/.zshrc     ~/.zshrc
 ln -snvf  ${current}/.aliases   ~/.aliases
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 
-ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.xml
+ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.yml
 ln -snvfd ${current}/.config/i3         ~/.config/i3
 ln -snvfd ${current}/.config/nvim       ~/.config/nvim
 ln -snvfd ${current}/.config/rofi       ~/.config/rofi

@@ -5,7 +5,7 @@
 # bshl  = backspace highlight
 # font, inside, ring, text, general
 
-i3lock \
+LANG=C i3lock \
   --inside-color='#282c34bb' \
   --insidever-color='#282c34bb' \
   --insidewrong-color='#282c34bb' \
@@ -24,6 +24,6 @@ i3lock \
   --keyhl-color='#282c3499' \
   --bshl-color='#eb6e67' \
   \
-  --blur=5 --ignore-empty-password --indicator \
+  --blur=8 --ignore-empty-password --indicator \
   --clock --time-str="%H:%M:%S" --date-str="%Y/%m/%d %a"
 

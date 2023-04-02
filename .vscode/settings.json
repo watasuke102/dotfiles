@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    ".func": "shellscript",
+    ".aliases": "shellscript",
+    "*.rasi": "plaintext",
+    "config": "plaintext",
+    "dunstrc": "plaintext",
+  }
+}

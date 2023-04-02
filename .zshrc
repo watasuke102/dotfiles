@@ -14,10 +14,12 @@ autoload -Uz _zinit
 ##################################
 ## Plugins
 
-zplugin light zsh-users/zsh-syntax-highlighting
-zplugin light zsh-users/zsh-autosuggestions
-zplugin light zsh-users/zsh-completions
-zplugin light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-history-substring-search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
 
 ##################################
 ## End of plugin

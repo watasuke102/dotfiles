@@ -4,6 +4,9 @@ local exist() {
 }
 exist exa  && alias ls="exa --icons --git"; alias tree="ls --tree"
 exist nvim && alias vim="nvim"
+exist gdb  && alias bt="gdb -q --batch \
+        -ex 'set print thread-events off' \
+        -ex 'run' -ex 'bt' --args"
 
 alias ll="ls -l"
 alias la="ls -a"

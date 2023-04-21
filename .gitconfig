@@ -1,3 +1,5 @@
+[init]
+	defaultBranch = main
 [commit]
 	gpgsign = true
 [user]
@@ -10,3 +12,4 @@
 	sync = remote update -p
 	spu  = stash push
 	spo  = stash pop
+

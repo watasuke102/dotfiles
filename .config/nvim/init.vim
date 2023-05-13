@@ -81,6 +81,8 @@ let g:winresizer_start_key = '<C-q>'
 let g:winresizser_vert_resize = 2
 let g:winresizser_horiz_resize = 2
 
+noremap <C-p> :<C-u>Files<CR>
+
 let g:rustfmt_autosave = 1
 autocmd FileType c,cpp ClangFormatAutoEnable
 

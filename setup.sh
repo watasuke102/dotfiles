@@ -12,6 +12,7 @@ Following files and directory will be overwritten.
  * ~/.func
  * ~/.zshrc
  * ~/.aliases
+ * ~/.gdbinit
  * ~/.tmux.conf
  * ~/.config/xremap.yml
  * ~/.config/i3
@@ -41,6 +42,11 @@ if [[ ! -e ~/.cache/dein ]]; then
   rm -f ${installer_tmp}
 fi
 
+if [[ ! -e ~/.gdb-dashboard ]]; then
+  echo -e "\033[36m[info] Downloading '.gdb-dashboard'...\033[39m"
+  curl https://raw.githubusercontent.com/cyrus-and/gdb-dashboard/master/.gdbinit -o ~/.gdb-dashboard
+fi
+
 if [[ ! -e ~/.git-prompt.sh ]]; then
   echo -e "\033[36m[info] Downloading '.git-prompt.sh'...\033[39m"
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
@@ -59,6 +65,7 @@ mkdir -p ~/.config
 ln -snvf  ${current}/.func      ~/.func
 ln -snvf  ${current}/.zshrc     ~/.zshrc
 ln -snvf  ${current}/.aliases   ~/.aliases
+ln -snvf  ${current}/.gdbinit   ~/.gdbinit
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 
 ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.yml

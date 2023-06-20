@@ -28,12 +28,14 @@ This script will be override existing files. Take backups if you needed.
 ## configuration list
 
 - zsh: shell
+- gdb: debugger
 - rofi: launcher
 - tmux: multiplexer
 - dunst: notification
 - neovim: editor
+- xremap: key mapper
 - polybar: status bar
-- i3-gaps: window manager
+- i3wm: window manager
 - alacritty: terminal
 
 ## License

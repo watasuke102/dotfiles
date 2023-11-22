@@ -2,6 +2,8 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
 [user]
 	email = watasuke102@gmail.com
 	name = watasuke102
@@ -10,6 +12,7 @@
 	b  = branch
 	f  = fetch
 	sync = remote update -p
-	spu  = stash push
+	spu  = stash push -u
 	spo  = stash pop
+	spa  = stash apply
 

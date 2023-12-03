@@ -21,4 +21,5 @@ alias cd-temp='cd $(mktemp -d)'
 alias cls="clear"
 alias :q="exit"
 alias reloadrc="source ~/.zshrc"
+alias upd="yay -Syu --noconfirm --sudoloop; rustup update"
 

@@ -14,7 +14,6 @@ autoload -Uz _zinit
 ##################################
 ## Plugins
 
-zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
@@ -37,8 +36,8 @@ zstyle ':completion:*' menu select
 
 # save history
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1024
+SAVEHIST=8192
 setopt share_history
 
 # enable color
@@ -94,4 +93,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 
 PROMPT='%F{green}[${PROMPT_PREFIX}%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
 %# '
+
+# zsh-syntax-highlighting MUST be placed at the end of zshrc
+zinit light zsh-users/zsh-syntax-highlighting
 

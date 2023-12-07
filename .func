@@ -8,22 +8,60 @@ local check_arg() {
 }
 
 comp() {
-  file=${1/.*}
-  shift
-  
-  executable_extension="out"
-  separator="-----"
+  file_list=""
+  exec_args=""
+  out_name=""
+  compiler="${CC:-clang}"
 
-  compile="${CC:-clang} -Wall ${CFLAGS} -o ${file}.${executable_extension} ${file}.c"
-  run="./${file}.${executable_extension} ${@}"
+  for arg_raw in $@; do
+    arg_name=${arg_raw/.*}
+    arg_ext=${arg_raw/*.}
+    echo ">>> raw: ${arg_raw}, name: ${arg_name}, ext: ${arg_ext}"
+
+    # Use exact-matched file if it exists (and is c or cpp file)
+    if [[ -e "${arg_raw}" && "${arg_name}" != "${arg_ext}" && \
+        ( "${arg_ext}" == "c" || "${arg_ext}" == "cpp" ) ]]; then
+      file_list+=" ${arg_raw}"
+      if [[ "${arg_ext}" == "cpp" ]]; then
+        compiler="${CXX:-clang++}"
+      fi
+    # priorize "*.c"
+    elif [[ -e "${arg_name}.c" ]]; then
+      file_list+=" ${arg_name}.c"
+    elif [[ -e "${arg_name}.cpp" ]]; then
+      file_list+=" ${arg_name}.cpp"
+      compiler="${CXX:-clang++}"
+    else
+      echo -e "[\e[0;31mERROR\e[m] Not Found: ${arg_name}.c(pp)?"
+      return 1
+    fi
+    if [[ "${out_name}" == "" ]]; then
+      out_name=${arg_name}
+    fi
+  done
+
+  if [[ "${out_name}" == "" ]]; then
+    echo -e "[\e[0;31mERROR\e[m] Please specify available .c file"
+    return 1
+  fi
+
+  executable_extension="out"
+  separator="-----------"
+
+  compile="${compiler} -Wall -g ${CFLAGS} -o ${out_name}.${executable_extension}${file_list}"
+  run="./${out_name}.${executable_extension} ${exec_args}"
 
   # コンパイル（失敗時にスクリプトを終了させる）
-  echo ${compile}
-  bash -c "${compile}" || return 1
+  echo -e "\$ ${compile}"
+  eval ${compile} || return 1
+
+  # コマンド表示（コピペ用）
+  echo "${separator}"
+  echo -e "\$ ${run}"
 
   # コマンドを実行する
-  echo "${separator}"
-  bash -c "${run} 2>&1"
+  eval ${run}
+  echo "[Exit: $?]"
   echo "${separator}"
 }
 

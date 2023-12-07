@@ -119,3 +119,12 @@ asm() {
   nasm -g -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
 }
 
+upd() {
+  echo -e "\e[1;7;32m\`yay -Syu\`\e[m"
+  yay -Syu --noconfirm --sudoloop
+  echo -e "\e[1;7;32m\`rustup update\`\e[m"
+  rustup update
+  echo -e "\e[1;7;32m\`zinit update\`\e[m"
+  zinit update --all --no-pager
+}
+

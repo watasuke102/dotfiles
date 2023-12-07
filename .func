@@ -16,8 +16,6 @@ comp() {
   for arg_raw in $@; do
     arg_name=${arg_raw/.*}
     arg_ext=${arg_raw/*.}
-    echo ">>> raw: ${arg_raw}, name: ${arg_name}, ext: ${arg_ext}"
-
     # Use exact-matched file if it exists (and is c or cpp file)
     if [[ -e "${arg_raw}" && "${arg_name}" != "${arg_ext}" && \
         ( "${arg_ext}" == "c" || "${arg_ext}" == "cpp" ) ]]; then
@@ -51,15 +49,13 @@ comp() {
   compile="${compiler} -Wall -g ${CFLAGS} -o ${out_name}.${executable_extension}${file_list}"
   run="./${out_name}.${executable_extension} ${exec_args}"
 
-  # コンパイル（失敗時にスクリプトを終了させる）
+  # compile
   echo -e "\$ ${compile}"
   eval ${compile} || return 1
 
-  # コマンド表示（コピペ用）
+  # run
   echo "${separator}"
   echo -e "\$ ${run}"
-
-  # コマンドを実行する
   eval ${run}
   echo "[Exit: $?]"
   echo "${separator}"

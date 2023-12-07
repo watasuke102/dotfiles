@@ -8,11 +8,12 @@
 	email = watasuke102@gmail.com
 	name = watasuke102
 [alias]
-	ch = checkout
-	b  = branch
-	f  = fetch
+	ch   = checkout
+	sw   = switch
+	b    = branch
+	f    = fetch
 	sync = remote update -p
 	spu  = stash push -u
 	spo  = stash pop
-	spa  = stash apply
+	sa   = stash apply
 

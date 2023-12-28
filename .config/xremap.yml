@@ -2,6 +2,10 @@ virtual_modifiers:
   - CapsLock
 keymap:
   - remap:
+      Home:     reserved
+      End:      reserved
+      PageUp:   reserved
+      PageDown: reserved
       Capslock-h: { with_mark: left }
       Capslock-j: { with_mark: down }
       Capslock-k: { with_mark: up }

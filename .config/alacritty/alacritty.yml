@@ -1,5 +1,8 @@
 window:
   dynamic_title: true
+  padding:
+    x: 2
+    y: 2
 
 cursor:
   style:
@@ -10,8 +13,8 @@ scrolling:
 
 font:
   normal:
-    family: MyricaM M
-  size: 12.0
+    family: MyricaM
+  size: 10.0
 
 # based https://gist.github.com/r-darwish/f8bb21a6c89a02c4bef76cc38bddad39
 colors:

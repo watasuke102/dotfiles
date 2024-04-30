@@ -15,7 +15,7 @@ Following files and directory will be overwritten.
  * ~/.gdbinit
  * ~/.tmux.conf
  * ~/.config/xremap.yml
- * ~/.config/i3
+ * ~/.config/hypr
  * ~/.config/nvim/
  * ~/.config/rofi/
  * ~/.config/dunst/
@@ -69,12 +69,15 @@ ln -snvf  ${current}/.gdbinit   ~/.gdbinit
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 
 ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.yml
-ln -snvfd ${current}/.config/i3         ~/.config/i3
+ln -snvfd ${current}/.config/hypr       ~/.config/hypr
 ln -snvfd ${current}/.config/nvim       ~/.config/nvim
 ln -snvfd ${current}/.config/rofi       ~/.config/rofi
 ln -snvfd ${current}/.config/dunst      ~/.config/dunst
 ln -snvfd ${current}/.config/polybar    ~/.config/polybar
 ln -snvfd ${current}/.config/alacritty  ~/.config/alacritty
+
+echo -e "\033[36m[info] initialize config files...\033[39m"
+touch ~/.config/hypr/screen.conf
 
 echo -e "\033[32m[info] All done!\033[32m"
 

@@ -19,6 +19,7 @@ Following files and directory will be overwritten.
  * ~/.config/nvim/
  * ~/.config/rofi/
  * ~/.config/dunst/
+ * ~/.config/lazygit/
  * ~/.config/polybar/
  * ~/.config/alacritty/
 END
@@ -73,6 +74,7 @@ ln -snvfd ${current}/.config/hypr       ~/.config/hypr
 ln -snvfd ${current}/.config/nvim       ~/.config/nvim
 ln -snvfd ${current}/.config/rofi       ~/.config/rofi
 ln -snvfd ${current}/.config/dunst      ~/.config/dunst
+ln -snvfd ${current}/.config/lazygit    ~/.config/lazygit
 ln -snvfd ${current}/.config/polybar    ~/.config/polybar
 ln -snvfd ${current}/.config/alacritty  ~/.config/alacritty
 

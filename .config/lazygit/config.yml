@@ -1,0 +1,8 @@
+gui:
+  nerdFontsVersion: "3"
+  mouseEvents: false
+  language: 'en'
+
+git:
+  branchLogCmd: "git log --color=always --decorate --pretty='%Cgreen%as%Creset %Cblue%h%Creset %s'"
+

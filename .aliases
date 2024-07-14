@@ -2,9 +2,9 @@
 local exist() {
   type $1 2>&1 > /dev/null
 }
-exist eza  && {alias ls="eza --icons --git"; alias tree="ls --tree"}
-exist nvim && alias vim="nvim"
-exist gdb  && alias bt="gdb -q --batch \
+exist eza     && {alias ls="eza --icons --git"; alias tree="ls --tree"}
+exist lazygit && alias lg="lazygit"
+exist gdb     && alias bt="gdb -q --batch \
         -ex 'set print thread-events off' \
         -ex 'run' -ex 'bt' --args"
 

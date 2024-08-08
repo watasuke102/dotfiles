@@ -36,7 +36,7 @@ zstyle ':completion:*' menu select
 
 # save history
 HISTFILE=~/.histfile
-HISTSIZE=1024
+HISTSIZE=4096
 SAVEHIST=8192
 setopt share_history
 

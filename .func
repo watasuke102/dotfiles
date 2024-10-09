@@ -1,5 +1,5 @@
 # 第1引数の数が第2引数未満だったら1を返す
-# ex: `check_arg $# 0 
+# ex) `check_arg $# 0 
 local check_arg() {
   if [[ ${1} -lt ${2} ]]; then
     echo "Error: few arguments; expected ${1}" 1>&2

@@ -1,5 +1,5 @@
 [global]
-monitor         = 0
+monitor         = 2
 follow          = none
 sort            = true
 word_wrap       = true
@@ -18,12 +18,12 @@ icon_position = left
 max_icon_size = 64
 
 # appearance
-width              = 300
+width              = 400
 padding            = 10
 horizontal_padding = 15
 separator_height   = 10
 transparency       = 10
-font               = M+ 1p 9
+font               = Moralerspace Krypton NF 9
 
 [urgency_low]
 frame_color = "#00000000"
@@ -40,6 +40,6 @@ timeout     = 10
 [urgency_critical]
 frame_color = "#00000000"
 background  = "#eb6e67"
-foreground  = "#abb2bf"
+foreground  = "#282c34"
 timeout     = 10
 

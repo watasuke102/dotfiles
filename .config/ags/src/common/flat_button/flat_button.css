@@ -1,0 +1,12 @@
+.flat_button {
+  padding: 0;
+  color: #abb2bf;
+  border-color: transparent;
+  border-radius: 0;
+}
+.flat_button * {
+  background-color: #282c34;
+}
+.flat_button:focus {
+  outline: none;
+}

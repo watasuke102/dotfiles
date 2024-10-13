@@ -15,12 +15,12 @@ Following files and directory will be overwritten.
  * ~/.gdbinit
  * ~/.tmux.conf
  * ~/.config/xremap.yml
- * ~/.config/hypr
+ * ~/.config/ags/
+ * ~/.config/hypr/
  * ~/.config/nvim/
  * ~/.config/rofi/
  * ~/.config/dunst/
  * ~/.config/lazygit/
- * ~/.config/polybar/
  * ~/.config/alacritty/
 END
 
@@ -70,6 +70,7 @@ ln -snvf  ${current}/.gdbinit   ~/.gdbinit
 ln -snvf  ${current}/.tmux.conf ~/.tmux.conf
 
 ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.yml
+ln -snvfd ${current}/.config/ags        ~/.config/ags
 ln -snvfd ${current}/.config/hypr       ~/.config/hypr
 ln -snvfd ${current}/.config/nvim       ~/.config/nvim
 ln -snvfd ${current}/.config/rofi       ~/.config/rofi

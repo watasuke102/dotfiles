@@ -1,0 +1,18 @@
+.battery_progress {
+  font-size: 3px;
+  min-height: 4px;
+  margin: 4;
+}
+.battery_icon {
+  font-size: 13px;
+}
+
+.battery_warning {
+  color: #e5c07b;
+}
+.battery_critical {
+  color: #e06c75;
+}
+.battery_charging {
+  color: #98c379;
+}

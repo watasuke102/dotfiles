@@ -1,0 +1,10 @@
+.workspace_button {
+  border-bottom-width: 4px;
+}
+
+.focused_title {
+  margin: 0 64px;
+  color: #abb2bf;
+  font-size: 12px;
+  font-weight: bold;
+}

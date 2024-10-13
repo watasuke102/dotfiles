@@ -16,12 +16,12 @@ Following files and directory will be overwritten.
  * ~/.tmux.conf
  * ~/.config/xremap.yml
  * ~/.config/ags/
+ * ~/.config/dunst/
  * ~/.config/hypr/
+ * ~/.config/lazygit/
  * ~/.config/nvim/
  * ~/.config/rofi/
- * ~/.config/dunst/
- * ~/.config/lazygit/
- * ~/.config/alacritty/
+ * ~/.config/wezterm
 END
 
 echo -n "Do you want to continue? [y/N] "
@@ -76,8 +76,7 @@ ln -snvfd ${current}/.config/nvim       ~/.config/nvim
 ln -snvfd ${current}/.config/rofi       ~/.config/rofi
 ln -snvfd ${current}/.config/dunst      ~/.config/dunst
 ln -snvfd ${current}/.config/lazygit    ~/.config/lazygit
-ln -snvfd ${current}/.config/polybar    ~/.config/polybar
-ln -snvfd ${current}/.config/alacritty  ~/.config/alacritty
+ln -snvfd ${current}/.config/wezterm    ~/.config/wezterm
 
 echo -e "\033[36m[info] initialize config files...\033[39m"
 touch ~/.config/hypr/screen.conf

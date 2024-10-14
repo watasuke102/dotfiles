@@ -14,6 +14,7 @@ config.window_padding = {
   top    = '0.5cell',
   bottom = '0cell',
 }
+config.enable_wayland = false
 
 config.window_close_confirmation = 'NeverPrompt'
 config.mouse_bindings = {

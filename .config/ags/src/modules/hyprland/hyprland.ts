@@ -11,7 +11,7 @@ export const Hyprland = {
       truncate: 'end',
       setup: self => (self.label = hyprland.active.client.title),
     }),
-  workspaces: () => {
+  workspaces: (monitor: number) => {
     const dispatch = ws => hyprland.messageAsync(`dispatch workspace ${ws}`);
     return Widget.EventBox({
       onScrollUp: () => dispatch('+1'),
@@ -37,13 +37,9 @@ export const Hyprland = {
             }),
           ),
         ),
-
-        setup: self =>
-          self.hook(hyprland, () =>
-            self.children.forEach(btn => {
-              btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
-            }),
-          ),
+        setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
+          btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute && ws.monitorID === monitor);
+        })),
       }),
     });
   },

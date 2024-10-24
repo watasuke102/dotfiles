@@ -35,15 +35,14 @@ export function Battery() {
         }),
       }),
       Widget.Label({
-        label: battery.bind('percent').as(p => `${p}%`),
+        label: battery.bind('percent').as(p => `${Math.floor(p)}%`),
       }),
     ],
     tooltip_markup: Utils.merge(
       [battery.bind('charging'), battery.bind('time_remaining')],
       (charging, remain_sec) =>
         // `Pango` is used for markup
-        `<b>${Math.floor(Number(remain_sec) / 60)}min</b> remains until ${
-          charging ? 'charge completion' : 'battery depletion'
+        `<b>${Math.floor(Number(remain_sec) / 60)}min</b> remains until ${charging ? 'charge completion' : 'battery depletion'
         }`,
     ),
   });

@@ -7,15 +7,15 @@ export function Bar(monitor: number) {
     exclusivity: 'exclusive',
     anchor: ['top', 'left', 'right'],
     child: Widget.Box({
-      children: [Left(), Center(), Right()],
+      children: [Left(monitor), Center(), Right()],
     }),
   });
 }
 
-function Left() {
+function Left(monitor: number) {
   return Widget.Box({
     spacing: 8,
-    children: [Hyprland.workspaces(), Network()],
+    children: [Hyprland.workspaces(monitor), Network()],
   });
 }
 function Center() {

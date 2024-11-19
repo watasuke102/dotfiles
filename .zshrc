@@ -11,46 +11,36 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-##################################
-## Plugins
-
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-history-substring-search
-zinit ice lucid wait'0'
-zinit light joshskidmore/zsh-fzf-history-search
-
-##################################
-## End of plugin
+# lucid: surpress message that tells the plugin is loaded
+# light-mode: load plugins as `light`; disables plugin reporting
+zinit wait'0a' lucid light-mode for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zstyle ':completion:*' menu select" \
+    zdharma-continuum/fast-syntax-highlighting \
+  blockf \
+    zsh-users/zsh-history-substring-search \
+    joshskidmore/zsh-fzf-history-search \
+  blockf atpull'zinit creinstall -q .' \
+    zsh-users/zsh-completions \
+  atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+# End of plugin
 
 # disable beep
 setopt nolistbeep
 setopt no_beep
-
-setopt auto_cd
+# misc
+autoload -Uz colors && colors
+setopt share_history
 setopt printexitvalue
-
-# enable complete
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
 
 # save history
 HISTFILE=~/.histfile
-HISTSIZE=4096
-SAVEHIST=8192
-setopt share_history
+# on memory
+HISTSIZE=1024
+# on file
+SAVEHIST=102400
 
-# enable color
-autoload -Uz colors && colors
-
-# alias
-[[ -f ~/.aliases ]] && source ~/.aliases
-# functions
-[[ -f ~/.func ]] && source ~/.func
-# profile
-[[ -f ~/.profile ]] && source ~/.profile
-
-## Key binds
+## keymapping
 # Home
 bindkey "^[[1~"  beginning-of-line
 bindkey "^[[H"  beginning-of-line
@@ -66,12 +56,28 @@ bindkey "^[[F"  end-of-line
 bindkey -r "^[[5"
 # PageDown
 bindkey -r "^[[6"
-
 # move word by Ctrl+Left or Right
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-## Value
+# prompt
+setopt PROMPT_SUBST
+[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+# addされてないファイルがあるとき*, add済みかつcommitされていないとき+
+GIT_PS1_SHOWDIRTYSTATE=true
+# addされていない新規ファイルがあるとき%
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PROMPT='%F{green}[${PROMPT_PREFIX}%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
+%# '
+
+# alias
+[[ -f ~/.aliases ]] && source ~/.aliases
+# functions
+[[ -f ~/.func ]] && source ~/.func
+# profile
+[[ -f ~/.profile ]] && source ~/.profile
+
+# environment value
 export EDITOR=nvim
 export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
@@ -81,19 +87,4 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}"
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 export CC=clang
 export CXX=clang++
-#[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
-
-## prompt
-setopt PROMPT_SUBST
-[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
-# addされてないファイルがあるとき*, add済みかつcommitされていないとき+
-GIT_PS1_SHOWDIRTYSTATE=true
-# addされていない新規ファイルがあるとき%
-GIT_PS1_SHOWUNTRACKEDFILES=true
-
-PROMPT='%F{green}[${PROMPT_PREFIX}%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "<%s>")%f
-%# '
-
-# zsh-syntax-highlighting MUST be placed at the end of zshrc
-zinit light zsh-users/zsh-syntax-highlighting
 

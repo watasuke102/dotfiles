@@ -6,3 +6,5 @@ gui:
 git:
   branchLogCmd: "git log --color=always --decorate --pretty='%Cgreen%as%Creset %Cblue%h%Creset %s'"
 
+notARepository: quit
+

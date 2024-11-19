@@ -34,15 +34,6 @@ fi
 
 current=$(cd $(dirname ${0}); pwd)
 
-if [[ ! -e ~/.cache/dein ]]; then
-  echo -e "\033[36m[info] Setting up dein.vim...\033[39m"
-  installer_tmp=$(mktemp)
-  curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh -o "$installer_tmp"
-  echo 1 | sh ${installer_tmp} -uNC
-  mv ~/.config/nvim/init.vim.pre-dein-vim ~/.config/nvim/init.vim
-  rm -f ${installer_tmp}
-fi
-
 if [[ ! -e ~/.gdb-dashboard ]]; then
   echo -e "\033[36m[info] Downloading '.gdb-dashboard'...\033[39m"
   curl https://raw.githubusercontent.com/cyrus-and/gdb-dashboard/master/.gdbinit -o ~/.gdb-dashboard

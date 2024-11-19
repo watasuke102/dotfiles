@@ -8,7 +8,6 @@
 	email = watasuke102@gmail.com
 	name = watasuke102
 [alias]
-	ch   = checkout
 	sw   = switch
 	b    = branch
 	f    = fetch

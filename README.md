@@ -4,6 +4,8 @@
 
 ## How to setup
 
+require: `git`, `curl`
+
 ```bash
 git clone https://github.com/watasuke102/dotfiles
 cd dotfiles
@@ -35,11 +37,6 @@ aylurs-gtk-shell bun inotify-tools
 ```
 bat eza lazygit neovim tmux xremap-x11-bin zsh
 ```
-
-## require
-
-- curl
-- git
 
 ## configuration list
 

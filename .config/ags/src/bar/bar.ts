@@ -1,7 +1,8 @@
 import {Hyprland, Battery, Clock, Network, SystemTray, MachineUsage} from 'src/modules/index';
 
-export function Bar(monitor: number) {
+export function Bar(monitor: number, name: String) {
   return Widget.Window({
+    name,
     monitor: monitor,
     className: 'bar',
     exclusivity: 'exclusive',

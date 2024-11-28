@@ -7,6 +7,15 @@ local check_arg() {
   fi
 }
 
+upd() {
+  echo -e "\e[1;7;32m\`yay -Syu\`\e[m"
+  yay -Syu --noconfirm --sudoloop
+  echo -e "\e[1;7;32m\`rustup update\`\e[m"
+  rustup update
+  echo -e "\e[1;7;32m\`zinit update\`\e[m"
+  zinit update --all --no-pager
+}
+
 comp() {
   file_list=""
   exec_args=""
@@ -61,32 +70,6 @@ comp() {
   echo "${separator}"
 }
 
-# C++のコードを即席で実行しちゃうぞ
-# instantcppだとにてる名前のコマンド多くて補完がだめ
-cppinstant() {
-  src=$(mktemp --suffix=.cpp)
-  cat << END > ${src}
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-
-}
-END
-  out=$(mktemp --suffix=.out)
-  nvim ${src}
-  g++ -Wall -o ${out} ${src} && ${out}
-  rm -f ${src} ${out}
-}
-
-calc() {
-  python3 -c "print(${@})"
-}
-
-mkcd() {
-  mkdir -p "$@" && cd "$1"
-}
-
 local git_arg() {
   check_arg $# 1 || return 1
   repo="$1"
@@ -112,19 +95,5 @@ clone() {
   git_arg $@
   echo -e "\e[30;42m>> git clone https://github.com/$repo arg\e[m"
   eval git clone https://github.com/$repo $arg
-}
-
-asm() {
-  check_arg $# 1 || return 1
-  nasm -g -f elf64 ${1} -o a.o && ld -m elf_x86_64 a.o && rm a.o
-}
-
-upd() {
-  echo -e "\e[1;7;32m\`yay -Syu\`\e[m"
-  yay -Syu --noconfirm --sudoloop
-  echo -e "\e[1;7;32m\`rustup update\`\e[m"
-  rustup update
-  echo -e "\e[1;7;32m\`zinit update\`\e[m"
-  zinit update --all --no-pager
 }
 

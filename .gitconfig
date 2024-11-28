@@ -4,6 +4,8 @@
 	gpgsign = true
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [user]
 	email = watasuke102@gmail.com
 	name = watasuke102

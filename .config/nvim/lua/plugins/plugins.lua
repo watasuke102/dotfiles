@@ -59,6 +59,21 @@ return {
       { "<leader>fc", "<cmd>lua require('telescope.builtin').command_history() <CR>" },
     },
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    lazy = false,
+    config = function()
+      require("nvim-tree").setup {
+        view = { relativenumber = true, adaptive_size = true }
+      }
+    end,
+    keys = {
+      { "<C-b>", "<cmd>NvimTreeToggle<CR>" },
+    },
+  },
   { "easymotion/vim-easymotion" },
   { "tpope/vim-surround" },
   { "myusuf3/numbers.vim" }, -- show abs line number only under insert mode

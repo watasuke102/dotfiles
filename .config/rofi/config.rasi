@@ -1,9 +1,0 @@
-configuration {
-  modi:       "drun,power:~/.config/rofi/power.sh,clipboard:greenclip print";
-  font:       "MyricaM M 10";
-  show-icons: true;
-  icon-theme: "candy-icons";
-  kb-cancel:  "Escape";
-}
-
-@theme "~/.config/rofi/onedark.rasi"

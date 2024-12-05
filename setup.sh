@@ -20,7 +20,7 @@ Following files and directory will be overwritten.
  * ~/.config/hypr/
  * ~/.config/lazygit/
  * ~/.config/nvim/
- * ~/.config/rofi/
+ * ~/.config/wofi/
  * ~/.config/wezterm
 END
 
@@ -64,7 +64,7 @@ ln -snvf  ${current}/.config/xremap.yml ~/.config/xremap.yml
 ln -snvfd ${current}/.config/ags        ~/.config/ags
 ln -snvfd ${current}/.config/hypr       ~/.config/hypr
 ln -snvfd ${current}/.config/nvim       ~/.config/nvim
-ln -snvfd ${current}/.config/rofi       ~/.config/rofi
+ln -snvfd ${current}/.config/wofi       ~/.config/wofi
 ln -snvfd ${current}/.config/dunst      ~/.config/dunst
 ln -snvfd ${current}/.config/lazygit    ~/.config/lazygit
 ln -snvfd ${current}/.config/wezterm    ~/.config/wezterm

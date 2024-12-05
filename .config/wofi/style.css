@@ -1,0 +1,57 @@
+* {
+    font-family: "MyricaM M";
+}
+
+window {
+    background-color: #282c34;
+    border: 2px solid #abb2bf;
+}
+
+#input {
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #abb2bf;
+    background-color: #282c34;
+    color: #abb2bf;
+}
+#input:focus {
+    outline: none;
+    outline: 1px solid #98c379;
+}
+
+#inner-box {
+    color: #abb2bf;
+    background-color: #282c34;
+}
+
+#outer-box {
+    margin: 8px;
+    background-color: #282c34;
+}
+
+#scroll {
+}
+
+#entry:nth-child(even){
+    background-color: #484d56;
+}
+#entry:nth-child(odd){
+    background-color: #282c34;
+}
+
+#entry:selected {
+    color: #282c34;
+    background-color: #98c379;
+}
+
+#text {
+    padding: 4px;
+    color: #abb2bf;
+}
+
+#text:selected {
+    color: #282c34;
+}
+

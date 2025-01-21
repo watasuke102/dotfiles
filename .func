@@ -16,13 +16,25 @@ upd() {
   zinit update --all --no-pager
 }
 
+histgrep() {
+  grep -P $@ ~/.histfile | sort | uniq
+}
+
 comp() {
   file_list=""
+  compile_options=""
   exec_args=""
   out_name=""
   compiler="${CC:-clang}"
 
   for arg_raw in $@; do
+    if [[ "$arg_raw" == "--" ]]; then
+      continue
+    elif [[ "${arg_raw:0:1}" == "-" ]]; then
+      compile_options+=" $arg_raw"
+      continue
+    fi
+
     arg_name=${arg_raw/.*}
     arg_ext=${arg_raw/*.}
     # Use exact-matched file if it exists (and is c or cpp file)
@@ -55,7 +67,7 @@ comp() {
   executable_extension="out"
   separator="-----------"
 
-  compile="${compiler} -Wall -g ${CFLAGS} -o ${out_name}.${executable_extension}${file_list}"
+  compile="${compiler} -Wall -g ${compile_options} ${CFLAGS} -o ${out_name}.${executable_extension}${file_list}"
   run="./${out_name}.${executable_extension} ${exec_args}"
 
   # compile

@@ -6,10 +6,13 @@
 	rebase = true
 [push]
 	autoSetupRemote = true
+[rebase]
+	autoStash = true
 [user]
 	email = watasuke102@gmail.com
 	name = watasuke102
 [alias]
+	ch   = checkout
 	sw   = switch
 	b    = branch
 	f    = fetch
@@ -17,4 +20,5 @@
 	spu  = stash push -u
 	spo  = stash pop
 	sa   = stash apply
+	sls  = stash list
 

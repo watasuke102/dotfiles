@@ -74,9 +74,10 @@ return {
       { "<C-b>", "<cmd>NvimTreeToggle<CR>" },
     },
   },
-  { "easymotion/vim-easymotion" },
-  { "tpope/vim-surround" },
-  { "myusuf3/numbers.vim" }, -- show abs line number only under insert mode
-  { "numToStr/Comment.nvim" },
+  { "easymotion/vim-easymotion", event = "VeryLazy" },
+  { "tpope/vim-surround",        event = "VeryLazy" },
+  -- show abs line number only under insert mode
+  { "myusuf3/numbers.vim",   event = "VeryLazy" },
+  { "numToStr/Comment.nvim", event = "VeryLazy" },
 }
 

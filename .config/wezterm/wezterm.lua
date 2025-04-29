@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font('Moralerspace Krypton NF')
 config.font_size = 9
+config.warn_about_missing_glyphs = false
 config.color_scheme = 'OneDark (base16)'
 config.default_cursor_style = 'SteadyBar'
 config.hide_tab_bar_if_only_one_tab = true

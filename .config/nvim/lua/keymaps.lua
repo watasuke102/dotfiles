@@ -13,10 +13,6 @@ map("n", "<C-h>",     "<cmd>noh<CR>", o)
 map("n", "<leader>h", "<cmd>bprev<CR>", o)
 map("n", "<leader>l", "<cmd>bnext<CR>", o)
 
--- swap lines
-map("n", "<C-j>", "ddp", o)
-map("n", "<C-k>", "ddkP", o)
-
 -- toggle terminal by:
 -- https://github.com/3BD-R/nvim/blob/main/lua/basic/term.lua
 local term_win_id = nil
@@ -42,5 +38,5 @@ function toggle_terminal()
     cmd("startinsert")
   end
 end
-vim.keymap.set({"n", "t"}, "<C-a>", toggle_terminal, o)
+vim.keymap.set({"n", "t"}, "<C-j>", toggle_terminal, o)
 

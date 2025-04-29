@@ -27,14 +27,13 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       local hl = { "CursorColumn", "Whitespace" }
-      opts = {
-        indent = { highlight = hl, char = "" },
+      return require("ibl").setup {
+        indent = { highlight = hl, char = " " },
         whitespace = {
           highlight = hl,
           remove_blankline_trail = false,
         },
       }
-      return require("ibl").setup(opt)
     end,
   },
   {

@@ -105,7 +105,7 @@ sshclone() {
 
 clone() {
   git_arg $@
-  echo -e "\e[30;42m>> git clone https://github.com/$repo arg\e[m"
+  echo -e "\e[30;42m>> git clone https://github.com/$repo $arg\e[m"
   eval git clone https://github.com/$repo $arg
 }
 

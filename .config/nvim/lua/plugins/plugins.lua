@@ -1,10 +1,6 @@
 return {
   {
     "navarasu/onedark.nvim",
-    dependencies = {
-      "vim-airline/vim-airline-themes",
-      "ryanoasis/vim-devicons", 
-    },
     lazy     = false,
     priority = 990,
     config = function() vim.cmd("colorscheme onedark") end,
@@ -15,16 +11,29 @@ return {
     },
   },
   {
-    "vim-airline/vim-airline",
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     lazy     = false,
     priority = 980,
-    config = function()
-      vim.g["airline#extensions#tabline#enabled"] = 1
-      vim.g.airline_powerline_fonts = 1
-    end,
+    opts = {
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diagnostics'},
+        lualine_c = {'filename'},
+        lualine_x = {'lsp_status'},
+        lualine_y = {'encoding', 'filetype'},
+        lualine_z = {'location'}
+      },
+      tabline = {
+        lualine_a = {'buffers'}
+      },
+    }
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    event = {"BufReadPost"},
     config = function()
       local hl = { "CursorColumn", "Whitespace" }
       return require("ibl").setup {
@@ -63,12 +72,11 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    -- TODO: enable lazy load; load before opening an directory
     lazy = false,
-    config = function()
-      require("nvim-tree").setup {
-        view = { relativenumber = true, adaptive_size = true }
-      }
-    end,
+    opts = {
+      view = { relativenumber = true, adaptive_size = true }
+    },
     keys = {
       { "<C-b>", "<cmd>NvimTreeToggle<CR>" },
     },

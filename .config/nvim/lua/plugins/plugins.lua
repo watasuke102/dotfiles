@@ -32,8 +32,13 @@ return {
     }
   },
   {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
-    event = {"BufReadPost"},
+    event = "VeryLazy",
     config = function()
       local hl = { "CursorColumn", "Whitespace" }
       return require("ibl").setup {
@@ -44,17 +49,6 @@ return {
         },
       }
     end,
-  },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true
-  },
-  {
-    "petertriho/nvim-scrollbar",
-    opts = {
-      handle = { blend = 0 },
-    }
   },
   { -- fuzzy finder
     "nvim-telescope/telescope.nvim", 

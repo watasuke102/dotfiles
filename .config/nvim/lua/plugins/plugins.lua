@@ -54,19 +54,24 @@ return {
     "nvim-telescope/telescope.nvim", 
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-      { "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()               <CR>" },
-      { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()             <CR>" },
-      { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()            <CR>" },
-      { "<leader>fa", "<cmd>lua require('telescope.builtin').diagnostics()           <CR>" },
-      { "<leader>fc", "<cmd>lua require('telescope.builtin').command_history()       <CR>" },
-      { "<leader>fr", "<cmd>lua require('telescope.builtin').lsp_references()        <CR>" },
-      { "<leader>fd", "<cmd>lua require('telescope.builtin').lsp_definitions()       <CR>" },
-      { "<leader>fi", "<cmd>lua require('telescope.builtin').lsp_implementations()   <CR>" },
-      { "<leader>ft", "<cmd>lua require('telescope.builtin').lsp_type_definitions()  <CR>" },
-      { "<leader>fs", "<cmd>lua require('telescope.builtin').lsp_document_symbols()  <CR>" },
-      { "<leader>fS", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols() <CR>" },
-    },
+    keys = function()
+      local com = function(fname)
+        return string.format("<cmd>lua require('telescope.builtin').%s()<CR>", fname)
+      end
+      return {
+        { "<leader>fb", com("buffers"              ) },
+        { "<leader>fg", com("live_grep"            ) },
+        { "<leader>ff", com("find_files"           ) },
+        { "<leader>fa", com("diagnostics"          ) },
+        { "<leader>fc", com("command_history"      ) },
+        { "<leader>fr", com("lsp_references"       ) },
+        { "<leader>fd", com("lsp_definitions"      ) },
+        { "<leader>fi", com("lsp_implementations"  ) },
+        { "<leader>ft", com("lsp_type_definitions" ) },
+        { "<leader>fs", com("lsp_document_symbols" ) },
+        { "<leader>fS", com("lsp_workspace_symbols") },
+      }
+    end,
   },
   {
     "nvim-tree/nvim-tree.lua",

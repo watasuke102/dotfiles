@@ -28,5 +28,10 @@ vim.opt.smartcase   = true
 -- vim.opt.showmatch   = true
 vim.opt.showcmd     = true
 
--- vim.g.rustfmt_autosave = 1
+vim.opt.completeopt = {
+  "fuzzy",
+  "popup",
+  "menuone",  -- show menu even if only one candidate
+  "noinsert",
+}
 

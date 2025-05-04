@@ -74,10 +74,23 @@ return {
     opts = {
       view = { relativenumber = true, adaptive_size = true }
     },
-    keys = {
-      { "<C-b>", "<cmd>NvimTreeToggle<CR>" },
-    },
     cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus" },
+    keys = function()
+        return {{ "<C-b>", function()
+          local api = require("nvim-tree.api")
+          if not api.tree.is_visible() then
+            api.tree.open()
+            return
+          end
+          -- close if tree is already focused
+          if api.tree.is_tree_buf() then
+            api.tree.close()
+          else
+            api.tree.focus()
+          end
+        end
+      }}
+    end,
     init = function()
       -- open nvim-tree when Neovim open a directory
       vim.api.nvim_create_autocmd("BufEnter", {

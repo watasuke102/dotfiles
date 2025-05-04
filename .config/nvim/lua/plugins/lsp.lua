@@ -52,9 +52,10 @@ return {
       })
     end,
     keys = {
-      { "gh", "<cmd>lua vim.lsp.buf.hover()       <CR>" },
-      { "gd", "<cmd>lua vim.lsp.buf.definition()  <CR>" },
-      { "gD", "<cmd>lua vim.lsp.buf.declaration() <CR>" },
+      { "<C-space>", "<cmd>lua vim.lsp.completion.get()  <CR>", mode = "i" },
+      { "gh",        "<cmd>lua vim.lsp.buf.hover()       <CR>" },
+      { "gd",        "<cmd>lua vim.lsp.buf.definition()  <CR>" },
+      { "gD",        "<cmd>lua vim.lsp.buf.declaration() <CR>" },
       --[
       -- Note: default mapping is as follows:
       --   * grn   => vim.lsp.buf.rename()
@@ -62,6 +63,7 @@ return {
       --   * gra   => vim.lsp.buf.code_action()
       --   * gra   => vim.lsp.buf.code_action()
       --   * gri   => vim.lsp.buf.implementation()
+      --   * gO    => vim.lsp.buf.document_symbol()
       --   * <C-s> => vim.lsp.buf.signature_help()
       --]
     },

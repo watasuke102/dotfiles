@@ -33,8 +33,8 @@ return {
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    event = "VeryLazy",
-    opts = {}, -- required (idk why)
+    cmd = { "Mason", "MasonUpdate", "MasonLog", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
+    config = true,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -42,7 +42,7 @@ return {
       { "williamboman/mason.nvim" },
       { "neovim/nvim-lspconfig" },
     },
-    lazy = false,
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lspconfig = require("lspconfig")
       require("mason-lspconfig").setup_handlers({

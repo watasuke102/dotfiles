@@ -1,7 +1,8 @@
 vim.opt.clipboard:append{ "unnamedplus", "unnamed" }
 vim.opt.encoding    = "utf-8"
-vim.opt.list        = true
+vim.opt.list        = false
 vim.opt.number      = true
+
 -- relative number
 vim.opt.rnu         = true
 vim.opt.swapfile    = false
@@ -23,10 +24,6 @@ vim.opt.incsearch   = true
 vim.opt.hlsearch    = true
 -- case sensitive only when the pattern contains upper char
 vim.opt.smartcase   = true
-
--- highlight corresponding braces
--- vim.opt.showmatch   = true
-vim.opt.showcmd     = true
 
 vim.opt.completeopt = {
   "fuzzy",

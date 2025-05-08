@@ -31,26 +31,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     build = ":MasonUpdate",
     cmd = { "Mason", "MasonUpdate", "MasonLog", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
     config = true,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     dependencies = {
-      { "williamboman/mason.nvim" },
+      { "mason-org/mason.nvim" },
       { "neovim/nvim-lspconfig" },
     },
     event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      local lspconfig = require("lspconfig")
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          lspconfig[server_name].setup({})
-        end,
-      })
-    end,
+    config = true,
     keys = {
       { "<C-space>", "<cmd>lua vim.lsp.completion.get()  <CR>", mode = "i" },
       { "gh",        "<cmd>lua vim.lsp.buf.hover()       <CR>" },

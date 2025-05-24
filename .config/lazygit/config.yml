@@ -4,6 +4,7 @@ gui:
   language: 'en'
 
 git:
+  autoForwardBranches: none
   branchLogCmd: "git log --color=always --decorate --pretty='%Cgreen%as%Creset %Cblue%h%Creset %s'"
 
 notARepository: quit

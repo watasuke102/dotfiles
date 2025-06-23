@@ -1,3 +1,4 @@
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -83,8 +84,4 @@ export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME="gtk2"
 export WLR_NO_HARDWARE_CURSORS=1
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:${PKG_CONFIG_PATH}"
-export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
-export CC=clang
-export CXX=clang++
 

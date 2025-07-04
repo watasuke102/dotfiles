@@ -1,0 +1,117 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #abb2bf;
+$bg-color: #282c34;
+$green: #98c379;
+$red: #e06c75;
+$yellow: #e5c07b;
+$blue: #61afef;
+
+button {
+  border-radius: 0px;
+  padding: 0px 8px;
+  background-color: transparent;
+}
+
+popover {
+  contents {
+    background-color: $bg-color;
+    color: $fg-color;
+    border-radius: 4px;
+  }
+  arrow {
+    background-color: $bg-color;
+  }
+}
+
+window.Bar {
+  font-family: "Moralerspace Krypton HWJPDOCNF";
+  font-size: 12px;
+  background: $bg-color;
+  color: $fg-color;
+}
+
+.centerbox {
+  background: $bg-color;
+}
+
+.hyprland_workspaces {
+  button {
+    padding: 0px;
+    transition-duration: 0.15s;
+  }
+  .active {
+    color: $bg-color;
+    background-color: $green;
+  }
+}
+.hyprland_window_title {
+}
+
+.audio_volume {
+  .volume_slider {
+    margin: -8px;
+    trough {
+      margin: 0px;
+      background-color: $fg-color;
+      border-radius: 0px;
+    }
+    highlight {
+      background-color: $green;
+      border-radius: 0px;
+    }
+    slider {
+      transform: scale(0.7);
+      background-color: $fg-color;
+    }
+  }
+}
+
+.battery {
+  .levelbar {
+    margin: -8px;
+    trough {
+      border-radius: 0px;
+      background-color: $fg-color;
+    }
+    highlight {
+      border-radius: 0px;
+    }
+    slider {
+      background-color: transparent;
+    }
+  }
+  .charging highlight {
+    background-color: $blue;
+  }
+  .warning highlight {
+    background-color: $yellow;
+  }
+  .critical highlight {
+    background-color: $red;
+  }
+  .normal highlight {
+    background-color: $green;
+  }
+}
+
+.clock {
+  button.toggle {
+    padding: 0px;
+  }
+  .date,
+  .time {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .day_of_week {
+    margin-top: 2px; // centerize
+    font-size: 0.9em;
+  }
+}
+
+.tray {
+  button {
+    margin: 0px;
+    padding: 0px;
+  }
+}

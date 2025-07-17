@@ -14,7 +14,6 @@ alias la="ls -a"
 alias lla="ls -al"
 alias lal="ls -al"
 
-alias g="git"
 alias code="code-insiders"
 alias dc="docker compose"
 alias yay="yay --sudoloop"

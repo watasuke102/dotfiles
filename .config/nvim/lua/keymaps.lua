@@ -6,12 +6,15 @@ local o   = { noremap = true }
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-map("n", "<leader>w", "<cmd>w<CR>", o)
-map("n", "<C-h>",     "<cmd>noh<CR>", o)
+map("n", "<C-s>", "<cmd>w<CR>", o)
+map("i", "<C-s>", "<cmd>w<CR>", o)
+map("n", "<C-h>", "<cmd>noh<CR>", o)
 
 -- buffer
 map("n", "<leader>h", "<cmd>bprev<CR>", o)
 map("n", "<leader>l", "<cmd>bnext<CR>", o)
+
+map("t", "<Esc>", "<C-\\><C-n>", o)
 
 -- toggle terminal by:
 -- https://github.com/3BD-R/nvim/blob/main/lua/basic/term.lua

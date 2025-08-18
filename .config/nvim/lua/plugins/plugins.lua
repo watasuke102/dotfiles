@@ -49,6 +49,20 @@ return {
     "nvim-telescope/telescope.nvim", 
     branch = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
+    config = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-u>"] = false -- clear input by C-u
+          },
+        },
+      },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        },
+      },
+    },
     keys = function()
       local com = function(fname)
         return string.format("<cmd>lua require('telescope.builtin').%s()<CR>", fname)

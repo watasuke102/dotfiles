@@ -1,3 +1,10 @@
+-- based https://www.reddit.com/r/neovim/comments/1kq8jxb/just_wanted_to_share_this_little_config_snippet_i
+vim.opt.updatetime = 1500 -- time until `CursorHold` fire
+vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+        vim.diagnostic.open_float({ focusable = false, source = "if_many" })
+    end,
+})
 -- based `:h lsp-attach`
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),
@@ -28,6 +35,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- rust-analyzer should be managed by Rustup on system
+vim.lsp.enable('rust_analyzer')
 
 return {
   {
@@ -61,5 +71,6 @@ return {
       --]
     },
   },
+  { "neovim/nvim-lspconfig" },
 }
 

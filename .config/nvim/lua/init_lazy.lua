@@ -22,3 +22,6 @@ require("lazy").setup({
   change_detection = { notify = false },
 })
 
+-- La(zy) up(date)
+vim.api.nvim_create_user_command('Laup', 'Lazy update', {})
+

@@ -47,7 +47,7 @@ return {
   },
   { -- fuzzy finder
     "nvim-telescope/telescope.nvim", 
-    branch = "0.1.x",
+    branch = "master",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = {
       defaults = {
@@ -61,6 +61,9 @@ return {
         find_files = {
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
         },
+        diagnostics = {
+          previewer = false,
+        }
       },
     },
     keys = function()

@@ -51,7 +51,7 @@ return {
     end,
   },
   { -- fuzzy finder
-    "nvim-telescope/telescope.nvim", 
+    "nvim-telescope/telescope.nvim",
     branch = "master",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = {
@@ -61,15 +61,20 @@ return {
             ["<C-u>"] = false -- clear input by C-u
           },
         },
-      },
-      pickers = {
-        find_files = {
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        pickers = {
+          find_files = {
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          },
+          diagnostics = {
+            previewer = false,
+          }
         },
-        diagnostics = {
-          previewer = false,
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {}
+          }
         }
-      },
+      }
     },
     keys = function()
       local com = function(fname)
@@ -88,6 +93,13 @@ return {
         { "<leader>fs", com("lsp_document_symbols" ) },
         { "<leader>fS", com("lsp_workspace_symbols") },
       }
+    end,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telescope").load_extension("ui-select")
     end,
   },
   {

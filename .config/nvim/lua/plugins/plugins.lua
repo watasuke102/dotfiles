@@ -27,7 +27,12 @@ return {
         lualine_z = {'location'}
       },
       tabline = {
-        lualine_a = {'buffers'}
+        lualine_a = {
+          {
+            'buffers',
+            symbols = { alternate_file = '' }
+          }
+        }
       },
     }
   },

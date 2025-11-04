@@ -3,8 +3,8 @@ return {
     "navarasu/onedark.nvim",
     lazy     = false,
     priority = 990,
-    config = function() vim.cmd("colorscheme onedark") end,
-    opts = {
+    config   = function() vim.cmd("colorscheme onedark") end,
+    opts     = {
       code_style = {
         comments = "none",
       },
@@ -15,16 +15,16 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    lazy     = false,
-    priority = 980,
-    opts = {
+    lazy         = false,
+    priority     = 980,
+    opts         = {
       sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diagnostics'},
-        lualine_c = {'filename'},
-        lualine_x = {'lsp_status'},
-        lualine_y = {'encoding', 'filetype'},
-        lualine_z = {'location'}
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'lsp_status' },
+        lualine_y = { 'encoding', 'filetype' },
+        lualine_z = { 'location' }
       },
       tabline = {
         lualine_a = {
@@ -81,16 +81,16 @@ return {
         return string.format("<cmd>lua require('telescope.builtin').%s()<CR>", fname)
       end
       return {
-        { "<leader>fb", com("buffers"              ) },
-        { "<leader>fg", com("live_grep"            ) },
-        { "<leader>ff", com("find_files"           ) },
-        { "<leader>fa", com("diagnostics"          ) },
-        { "<leader>fc", com("command_history"      ) },
-        { "<leader>fr", com("lsp_references"       ) },
-        { "<leader>fd", com("lsp_definitions"      ) },
-        { "<leader>fi", com("lsp_implementations"  ) },
-        { "<leader>ft", com("lsp_type_definitions" ) },
-        { "<leader>fs", com("lsp_document_symbols" ) },
+        { "<leader>fb", com("buffers") },
+        { "<leader>fg", com("live_grep") },
+        { "<leader>ff", com("find_files") },
+        { "<leader>fa", com("diagnostics") },
+        { "<leader>fc", com("command_history") },
+        { "<leader>fr", com("lsp_references") },
+        { "<leader>fd", com("lsp_definitions") },
+        { "<leader>fi", com("lsp_implementations") },
+        { "<leader>ft", com("lsp_type_definitions") },
+        { "<leader>fs", com("lsp_document_symbols") },
         { "<leader>fS", com("lsp_workspace_symbols") },
       }
     end,
@@ -110,20 +110,20 @@ return {
     },
     cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus" },
     keys = function()
-        return {{ "<C-b>", function()
-          local api = require("nvim-tree.api")
-          if not api.tree.is_visible() then
-            api.tree.open()
-            return
-          end
-          -- close if tree is already focused
-          if api.tree.is_tree_buf() then
-            api.tree.close()
-          else
-            api.tree.focus()
-          end
+      return { { "<C-b>", function()
+        local api = require("nvim-tree.api")
+        if not api.tree.is_visible() then
+          api.tree.open()
+          return
         end
-      }}
+        -- close if tree is already focused
+        if api.tree.is_tree_buf() then
+          api.tree.close()
+        else
+          api.tree.focus()
+        end
+      end
+      } }
     end,
     init = function()
       -- open nvim-tree when Neovim open a directory
@@ -149,6 +149,5 @@ return {
   { "numToStr/Comment.nvim",     event = "VeryLazy" },
   { "easymotion/vim-easymotion", event = "VeryLazy" },
   -- show abs line number only under insert mode
-  { "myusuf3/numbers.vim",   event = "InsertEnter" },
+  { "myusuf3/numbers.vim",       event = "InsertEnter" },
 }
-

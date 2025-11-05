@@ -56,6 +56,11 @@ return {
     event = "InsertEnter",
     config = true
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    -- do not use event = "VeryLazy" to avoid layout shift
+    config = true
+  },
   { "tpope/vim-surround",        event = "VeryLazy" },
   { "numToStr/Comment.nvim",     event = "VeryLazy" },
   { "easymotion/vim-easymotion", event = "VeryLazy" },

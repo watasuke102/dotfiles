@@ -23,10 +23,13 @@ return {
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_c = { { 'filename', path = 1 } }, -- 1: relative path
         lualine_x = { 'lsp_status' },
         lualine_y = { 'encoding', 'filetype' },
         lualine_z = { 'location' }
+      },
+      inactive_sections = {
+        lualine_c = { { 'filename', path = 1 } },
       },
       tabline = {
         lualine_a = {

@@ -35,7 +35,7 @@ aylurs-gtk-shell bun inotify-tools
 ### other
 
 ```
-bat eza lazygit neovim tmux xremap-x11-bin zsh
+bat eza fzf lazygit neovim tmux xremap-x11-bin zsh
 ```
 
 ## configuration list

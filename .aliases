@@ -2,9 +2,10 @@
 local exist() {
   type $1 2>&1 > /dev/null
 }
-exist eza     && {alias ls="eza --icons --git"; alias tree="ls --tree"}
+exist eza     && {alias ls="eza --icons --git --group"; alias tree="ls --tree"}
 exist nvim    && alias vim=nvim
 exist lazygit && alias lg="lazygit"
+exist paru    && alias pa="paru --sudoloop"
 exist gdb     && alias bt="gdb -nh -q --batch \
         -ex 'set print thread-events off' \
         -ex 'run' -ex 'bt' --args"
@@ -16,10 +17,10 @@ alias lal="ls -al"
 
 alias code="code-insiders"
 alias dc="docker compose"
-alias yay="yay --sudoloop"
 
 alias cd-temp='cd $(mktemp -d)'
 alias cls="clear"
 alias :q="exit"
 alias reloadrc="tmux source-file ~/.tmux.conf; source ~/.zshrc"
+alias cformat="find . -regextype sed -regex '^.*\.\(c\(pp\)\?\|h\(pp\)\?\)$' | xargs clang-format -i"
 

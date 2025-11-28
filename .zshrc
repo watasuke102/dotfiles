@@ -19,7 +19,6 @@ zinit wait'0a' lucid light-mode for \
     zdharma-continuum/fast-syntax-highlighting \
   blockf \
     zsh-users/zsh-history-substring-search \
-    joshskidmore/zsh-fzf-history-search \
   blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions \
   atload"!_zsh_autosuggest_start" \
@@ -84,4 +83,6 @@ export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME="gtk2"
 export WLR_NO_HARDWARE_CURSORS=1
+
+exist fzf && source <(fzf --zsh)
 

@@ -24,3 +24,6 @@
 	sa   = stash apply
 	sls  = stash list
 
+  # <commit date YYYY-MM-DD> <hash> <title> <decoration>
+  logger = log --color=always --graph --pretty=format:'%C(green)%cs %C(bold yellow)%h %C(bold white)%s%C(reset) %C(auto)%d%C(reset)' --abbrev-commit
+

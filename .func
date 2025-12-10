@@ -9,7 +9,7 @@ local check_arg() {
 
 upd() {
   echo -e "\e[1;7;32m\`yay -Syu\`\e[m"
-  yay -Syu --noconfirm --sudoloop
+  paru -Syu --noconfirm --sudoloop
   echo -e "\e[1;7;32m\`rustup update\`\e[m"
   rustup update
   echo -e "\e[1;7;32m\`zinit update\`\e[m"
@@ -18,6 +18,10 @@ upd() {
 
 histgrep() {
   grep -P $@ ~/.histfile | sort | uniq
+}
+
+whose() {
+  paru -Qo $(which $1)
 }
 
 comp() {

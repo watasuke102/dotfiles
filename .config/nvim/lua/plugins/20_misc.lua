@@ -24,14 +24,14 @@ return {
       return { { "<C-b>", function()
         local api = require("nvim-tree.api")
         if not api.tree.is_visible() then
-          api.tree.open()
+          api.tree.open({find_file = true})
           return
         end
         -- close if tree is already focused
         if api.tree.is_tree_buf() then
           api.tree.close()
         else
-          api.tree.focus()
+          api.tree.focus({find_file = true})
         end
       end
       } }

@@ -11,8 +11,7 @@ export function AudioVolume() {
       <slider
         cssClasses={["volume_slider"]}
         value={bind(speaker, "volume")}
-        // FIXME: does not work!
-        onNotifyValue={(self) => speaker.set_volume(self.value)}
+        onNotifyValue={(self) => { speaker.volume = self.value }}
         widthRequest={100}
       />
       <label

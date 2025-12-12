@@ -1,6 +1,5 @@
 import { bind, Variable } from "astal";
 import AstalBattery from "gi://AstalBattery";
-import { mergeBindings } from "../../../../../usr/share/astal/gjs/_astal";
 
 export function Battery() {
   const battery = AstalBattery.get_default();
@@ -25,7 +24,7 @@ export function Battery() {
       <image iconName={bind(battery, "iconName")} />
       <slider
         value={battery_percentage}
-        cssClasses={["levelbar", class_name.get()]}
+        cssClasses={ class_name().as(e => ["levelbar", e])}
         widthRequest={100}
       />
       <label

@@ -30,8 +30,8 @@ setopt nolistbeep
 setopt no_beep
 # misc
 autoload -Uz colors && colors
-setopt share_history
-setopt printexitvalue
+setopt print_exit_value
+setopt list_types # show marks for each completion targetted file
 
 # save history
 HISTFILE=~/.histfile
@@ -79,6 +79,7 @@ PROMPT='%F{green}[${PROMPT_PREFIX}%*]%f %B%F{cyan}%~%f%b %F{yellow}$(__git_ps1 "
 
 # environment value
 export EDITOR=nvim
+export LESS="--use-color --raw-control-chars --long-prompt --chop-long-lines --quit-if-one-screen"
 export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME="gtk2"

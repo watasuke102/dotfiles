@@ -82,8 +82,9 @@ export EDITOR=nvim
 export LESS="--use-color --raw-control-chars --long-prompt --chop-long-lines --quit-if-one-screen"
 export BAT_STYLE="header-filename,header-filesize,grid,snip"
 export GPG_TTY=$(tty)
-export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="qt6ct"
 export WLR_NO_HARDWARE_CURSORS=1
+export DEBUGINFOD_URLS=""
 
 exist fzf && source <(fzf --zsh)
 

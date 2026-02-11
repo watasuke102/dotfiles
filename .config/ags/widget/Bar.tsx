@@ -7,8 +7,15 @@ import { AudioVolume } from "./AudioVolume";
 import { Wifi } from "./Wifi";
 import { Tray } from "./Tray";
 
-export default function Bar(gdkmonitor: Gdk.Monitor, monitor_index: number) {
+export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
+
+  let monitor_index = -1;
+  App.get_monitors().forEach((e, i) => {
+    if (e.model === gdkmonitor.model) {
+      monitor_index = i;
+    }
+  });
 
   return (
     <window

@@ -24,7 +24,7 @@ export function Battery() {
       <image iconName={bind(battery, "iconName")} />
       <slider
         value={battery_percentage}
-        cssClasses={ class_name().as(e => ["levelbar", e])}
+        cssClasses={class_name().as(e => ["levelbar", e])}
         widthRequest={100}
       />
       <label

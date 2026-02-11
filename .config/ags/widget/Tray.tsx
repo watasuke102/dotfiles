@@ -3,7 +3,6 @@ import AstalTray from "gi://AstalTray";
 
 export function Tray() {
   const tray = AstalTray.get_default();
-  console.log(tray.get_items().map((e) => e.title));
 
   return (
     <menubutton cssClasses={["tray"]}>

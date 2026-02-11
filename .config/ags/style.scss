@@ -7,9 +7,12 @@ $yellow: #e5c07b;
 $blue: #61afef;
 
 button {
+  border: none;
   border-radius: 0px;
   padding: 0px 8px;
+  color: $fg-color;
   background-color: transparent;
+  padding: 0;
 }
 
 popover {
@@ -36,12 +39,19 @@ window.Bar {
 
 .hyprland_workspaces {
   button {
-    padding: 0px;
+    padding: 0 4px;
     transition-duration: 0.15s;
+    border-bottom: 2px solid transparent;
   }
+  // I want to set background-color to $green permanently
+  // But bg color only changes when it is hovered (idk why)
   .active {
-    color: $bg-color;
+    border-bottom: 2px solid $green;
     background-color: $green;
+    color: $fg-color;
+    &:hover {
+      color: $bg-color;
+    }
   }
 }
 .hyprland_window_title {
@@ -49,19 +59,21 @@ window.Bar {
 
 .audio_volume {
   .volume_slider {
-    margin: -8px;
+    margin: -8px -4px;
     trough {
       margin: 0px;
-      background-color: $fg-color;
+      background: $bg-color;
+      border: 1px solid $fg-color;
       border-radius: 0px;
     }
     highlight {
-      background-color: $green;
+      background: $green;
+      border: none;
       border-radius: 0px;
     }
     slider {
       transform: scale(0.7);
-      background-color: $fg-color;
+      background: $fg-color;
     }
   }
 }
@@ -70,27 +82,30 @@ window.Bar {
   .levelbar {
     margin: -8px;
     trough {
+      background: $bg-color;
+      border: 1px solid $fg-color;
       border-radius: 0px;
-      background-color: $fg-color;
     }
     highlight {
+      border: none;
       border-radius: 0px;
     }
     slider {
+      border: none;
       background-color: transparent;
     }
   }
   .charging highlight {
-    background-color: $blue;
+    background: $green;
   }
   .warning highlight {
-    background-color: $yellow;
+    background: $yellow;
   }
   .critical highlight {
-    background-color: $red;
+    background: $red;
   }
   .normal highlight {
-    background-color: $green;
+    background: $fg-color;
   }
 }
 

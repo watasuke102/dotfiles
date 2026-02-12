@@ -1,14 +1,17 @@
-import { bind } from "astal";
 import Network from "gi://AstalNetwork";
+import { createBinding, With } from "gnim";
 
 export function Wifi() {
-  const wifi = bind(Network.get_default(), "wifi");
+  const wifi = createBinding(Network.get_default(), "wifi");
+
   return (
-    <box cssClasses={["wifi"]} visible={wifi.as(Boolean)} spacing={4}>
-      {wifi.as((wifi) => [
-        <image iconName={bind(wifi, "icon_name")} />,
-        <label label={bind(wifi, "ssid")} />,
-      ])}
-    </box>
+    <With value={wifi}>
+      {(wifi) =>
+        <box cssClasses={["wifi"]} visible={!!wifi} spacing={4}>
+          <image iconName={createBinding(wifi, "icon_name")} />
+          <label label={createBinding(wifi, "ssid")} />
+        </box>
+      }
+    </With>
   );
 }

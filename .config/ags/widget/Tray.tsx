@@ -1,30 +1,30 @@
-import { bind } from "astal";
 import AstalTray from "gi://AstalTray";
+import Gtk from "gi://Gtk?version=4.0";
+import { createBinding, For } from "gnim";
 
 export function Tray() {
   const tray = AstalTray.get_default();
+  const items = createBinding(tray, "items");
+
+  const init = (button: Gtk.MenuButton, item: AstalTray.TrayItem) => {
+    button.menuModel = item.menuModel;
+    button.insert_action_group("dbusmenu", item.actionGroup);
+    item.connect("notify::action-group", () => {
+      button.insert_action_group("dbusmenu", item.actionGroup);
+    })
+  }
 
   return (
     <menubutton cssClasses={["tray"]}>
       <popover>
         <box spacing={12}>
-          {bind(tray, "items").as((items) =>
-            items.map((item) => {
-              return (
-                <menubutton
-                  tooltipMarkup={bind(item, "tooltipMarkup")}
-                  usePopover={false}
-                  actionGroup={bind(item, "actionGroup").as((ag) => [
-                    "dbusmenu",
-                    ag,
-                  ])}
-                  menuModel={bind(item, "menuModel")}
-                >
-                  <image icon_name={bind(item, "icon_name")} />
-                </menubutton>
-              );
-            })
-          )}
+          <For each={items}>
+            {(item) => (
+              <menubutton $={self => init(self, item)}>
+                <image gicon={createBinding(item, "gicon")} />
+              </menubutton>
+            )}
+          </For>
         </box>
       </popover>
     </menubutton>

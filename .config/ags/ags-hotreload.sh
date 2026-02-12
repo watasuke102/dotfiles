@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+export GSK_RENDERER=cairo
+
 CONFIG_DIR=$(dirname $0)
 
 restart_ags() {
@@ -8,7 +10,7 @@ restart_ags() {
     sleep 0.5s
   done
   ags quit 2> /dev/null
-  ags run --gtk4 &
+  ags run --gtk 4 &
 }
 restart_ags
 

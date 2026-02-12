@@ -23,13 +23,13 @@ If you want to use full environment, install these packages with AUR helper on A
 ### Hyprland
 
 ```
-alsa-utils brightnessctl dex dunst flameshot hyprland hyprpaper rofi-greenclip swaylock-effects wezterm wofi xdg-desktop-portal-hyprland
+alsa-utils brightnessctl cliphist dex dunst flameshot hyprland hyprpaper swaylock-effects wezterm wl-clipboard wofi xdg-desktop-portal-hyprland
 ```
 
 ### ags
 
 ```
-aylurs-gtk-shell bun inotify-tools
+aylurs-gtk-shell libadwaita inotify-tools
 ```
 
 ### other
@@ -42,7 +42,7 @@ bat eza fzf lazygit neovim tmux xremap-x11-bin zsh
 
 - zsh: shell
 - gdb: debugger
-- rofi: launcher
+- wofi: launcher
 - tmux: multiplexer
 - dunst: notification
 - neovim: editor

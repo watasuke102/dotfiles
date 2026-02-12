@@ -1,14 +1,15 @@
-import { bind, Variable } from "astal";
 import AstalBattery from "gi://AstalBattery";
+import { createBinding, createComputed } from "gnim";
 
 export function Battery() {
   const battery = AstalBattery.get_default();
-  const battery_percentage = bind(battery, "percentage");
-  const battery_charging = bind(battery, "charging");
-  const class_name = Variable.derive(
-    [battery_percentage, battery_charging],
-    (percent, is_charging) => {
-      if (is_charging) return "charging";
+  const battery_percentage = createBinding(battery, "percentage");
+  const battery_charging = createBinding(battery, "charging");
+  const class_name = createComputed(
+    //[battery_percentage, battery_charging],
+    () => {
+      if (battery_charging()) return "charging";
+      const percent = battery_percentage();
       if (percent < 0.2) return "critical";
       if (percent < 0.4) return "warning";
       return "normal";
@@ -19,16 +20,16 @@ export function Battery() {
     <box
       cssClasses={["battery"]}
       spacing={4}
-      visible={bind(battery, "is_present")}
+      visible={createBinding(battery, "is_present")}
     >
-      <image iconName={bind(battery, "iconName")} />
+      <image iconName={createBinding(battery, "iconName")} />
       <slider
         value={battery_percentage}
-        cssClasses={class_name().as(e => ["levelbar", e])}
+        cssClasses={class_name(e => ["levelbar", e])}
         widthRequest={100}
       />
       <label
-        label={bind(battery, "percentage").as((p) => `${Math.floor(p * 100)}%`)}
+        label={createBinding(battery, "percentage").as((p) => `${Math.floor(p * 100)}%`)}
       />
     </box>
   );

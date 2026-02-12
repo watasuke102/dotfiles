@@ -43,15 +43,10 @@ window.Bar {
     transition-duration: 0.15s;
     border-bottom: 2px solid transparent;
   }
-  // I want to set background-color to $green permanently
-  // But bg color only changes when it is hovered (idk why)
   .active {
     border-bottom: 2px solid $green;
+    color: $bg-color;
     background-color: $green;
-    color: $fg-color;
-    &:hover {
-      color: $bg-color;
-    }
   }
 }
 .hyprland_window_title {

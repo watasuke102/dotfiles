@@ -40,16 +40,16 @@ bat eza fzf lazygit neovim tmux xremap-x11-bin zsh
 
 ## configuration list
 
+- neovim: editor
 - zsh: shell
+- tmux: multiplexer
+- xremap: key mapper
+- Wezterm: terminal
+- Hyprland: window manager
+- AGS: status bar
 - gdb: debugger
 - wofi: launcher
-- tmux: multiplexer
 - dunst: notification
-- neovim: editor
-- xremap: key mapper
-- AGS: status bar
-- Hyprland: window manager
-- Wezterm: terminal
 
 ## License
 

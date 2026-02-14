@@ -16,8 +16,10 @@ export function AudioVolume() {
         widthRequest={100}
       />
       <label
-        label={createBinding(speaker, "volume").as((v) => `${Math.floor(v * 100)}%`)}
+        cssClasses={['num']}
+        label={createBinding(speaker, "volume").as((v) => Math.floor(v * 100).toString())}
       />
+      <label cssClasses={['unit']} label="%" />
     </box>
   );
 }

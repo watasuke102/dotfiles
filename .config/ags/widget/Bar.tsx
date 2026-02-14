@@ -27,7 +27,7 @@ export default function Bar(props: Props) {
       application={app}
       $={self => onCleanup(() => self.destroy())}
     >
-      <box cssClasses={["centerbox"]} spacing={12}>
+      <box cssClasses={["centerbox"]} spacing={8}>
         <HyprlandWorkspaces monitor={props.index} />
         <Wifi />
         <HyprlandWindowTitle />

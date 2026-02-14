@@ -19,7 +19,6 @@ export function Battery() {
   return (
     <box
       cssClasses={["battery"]}
-      spacing={4}
       visible={createBinding(battery, "is_present")}
     >
       <image iconName={createBinding(battery, "iconName")} />
@@ -29,8 +28,10 @@ export function Battery() {
         widthRequest={100}
       />
       <label
-        label={createBinding(battery, "percentage").as((p) => `${Math.floor(p * 100)}%`)}
+        cssClasses={['num']}
+        label={createBinding(battery, "percentage").as((p) => Math.floor(p * 100).toString())}
       />
+      <label cssClasses={['unit']} label="%" />
     </box>
   );
 }

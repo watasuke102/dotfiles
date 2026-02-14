@@ -54,7 +54,7 @@ window.Bar {
 
 .audio_volume {
   .volume_slider {
-    margin: -8px -4px;
+    margin: -8px;
     trough {
       margin: 0px;
       background: $bg-color;
@@ -71,11 +71,18 @@ window.Bar {
       background: $fg-color;
     }
   }
+  .num {
+    font-weight: bold;
+    font-size: 1.15em;
+  }
+  .percent {
+    font-size: 1.08em;
+  }
 }
 
 .battery {
   .levelbar {
-    margin: -8px;
+    margin: -7px;
     trough {
       background: $bg-color;
       border: 1px solid $fg-color;
@@ -101,6 +108,13 @@ window.Bar {
   }
   .normal highlight {
     background: $fg-color;
+  }
+  .num {
+    font-weight: bold;
+    font-size: 1.15em;
+  }
+  .percent {
+    font-size: 1.08em;
   }
 }
 

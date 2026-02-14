@@ -1,18 +1,18 @@
 * {
-    font-family: "MyricaM M";
+    font-family: "Moralerspace Krypton HWJPDOCNF", sans-serif;
+    font-size: 16px;
 }
 
-window {
+#window {
     background-color: #282c34;
-    border: 2px solid #abb2bf;
+    border: 1px solid #abb2bf;
+    border-radius: 2px;
 }
 
 #input {
-    margin-bottom: 8px;
     padding-bottom: 4px;
     border-radius: 0;
     border: none;
-    border-bottom: 2px solid #abb2bf;
     background-color: #282c34;
     color: #abb2bf;
 }
@@ -34,6 +34,9 @@ window {
 #scroll {
 }
 
+#entry {
+    border-radius: 0;
+}
 #entry:nth-child(even){
     background-color: #484d56;
 }
@@ -50,8 +53,12 @@ window {
     padding: 4px;
     color: #abb2bf;
 }
-
 #text:selected {
+    font-weight: bold;
     color: #282c34;
+}
+
+#expander-box:hover {
+    background-color: red;
 }
 

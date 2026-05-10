@@ -20,6 +20,7 @@ Following files and directory will be overwritten.
  * ~/.config/hypr/
  * ~/.config/lazygit/
  * ~/.config/nvim/
+ * ~/.config/swaylock/
  * ~/.config/wofi/
  * ~/.config/wezterm
 END
@@ -68,6 +69,7 @@ ln -snvfd ${current}/.config/wofi       ~/.config/wofi
 ln -snvfd ${current}/.config/dunst      ~/.config/dunst
 ln -snvfd ${current}/.config/lazygit    ~/.config/lazygit
 ln -snvfd ${current}/.config/wezterm    ~/.config/wezterm
+ln -snvfd ${current}/.config/swaylock   ~/.config/swaylock
 
 echo -e "\033[36m[info] initialize config files...\033[39m"
 touch ~/.config/hypr/screen.conf

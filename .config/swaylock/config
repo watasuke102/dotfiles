@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# require i3lock-effects
+
+clock
+screenshots
+
+#fade-in=0.2
+effect-blur=8x4
+ignore-empty-password
+
+font="Moralerspace Krypton HWJPDOCNF"
+timestr=%H:%M:%S
+datestr=%Y/%m/%d %a
+
+indicator
+indicator-radius=96
+indicator-thickness=7
+
+bs-hl-color=eb6e67
+key-hl-color=282c3499
+separator-color=282c34cc
+
+text-color=abb2bf
+ring-color=98c379
+line-color=00000000
+inside-color=282c34
+
+text-ver-color=282c34
+ring-ver-color=61afef
+line-ver-color=00000000
+inside-ver-color=61afef
+
+text-wrong-color=282c34
+ring-wrong-color=e06c75
+line-wrong-color=00000000
+inside-wrong-color=e06c75
+
+text-clear-color=282c34
+ring-clear-color=c678dd
+line-clear-color=00000000
+inside-clear-color=c678dd
+

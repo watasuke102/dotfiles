@@ -9,11 +9,19 @@ local check_arg() {
 
 upd() {
   echo -e "\e[1;7;32m\`yay -Syu\`\e[m"
-  paru -Syu --noconfirm --sudoloop
+  yay -Syu --noconfirm --sudoloop
   echo -e "\e[1;7;32m\`rustup update\`\e[m"
   rustup update
   echo -e "\e[1;7;32m\`zinit update\`\e[m"
   zinit update --all --no-pager
+}
+
+# update screen config by fzf
+scr() {
+  conf_file=$(find ~/.config/hypr/screen -type f | fzf)
+  if [[ $conf_file != "" ]]; then
+    echo "source = $conf_file" > ~/.config/hypr/screen.conf
+  fi
 }
 
 histgrep() {

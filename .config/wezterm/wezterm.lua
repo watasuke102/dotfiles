@@ -1,8 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('Moralerspace Krypton NF')
-config.font_size = 9
+config.font = wezterm.font('Moralerspace Krypton HWJPDOCNF')
+config.font_size = 8
 config.warn_about_missing_glyphs = false
 config.color_scheme = 'OneDark (base16)'
 config.default_cursor_style = 'SteadyBar'

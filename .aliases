@@ -10,14 +10,15 @@ exist gdb     && alias bt="gdb -nh -q --batch \
         -ex 'set print thread-events off' \
         -ex 'run' -ex 'bt' --args"
 
-alias ll="ls -l"
+alias ll="ls -l --group"
 alias la="ls -a"
-alias lla="ls -al"
-alias lal="ls -al"
+alias lla="ls -al --group"
+alias lal="ls -al --group"
 
 alias code="code-insiders"
 alias dc="docker compose"
 
+alias cdr='cd $(git rev-parse --show-toplevel)' # cd r(epository top)
 alias cd-temp='cd $(mktemp -d)'
 alias cls="clear"
 alias :q="exit"

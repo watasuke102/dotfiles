@@ -29,7 +29,7 @@ histgrep() {
 }
 
 whose() {
-  paru -Qo $(which $1)
+  yay -Qo $(which $1)
 }
 
 comp() {

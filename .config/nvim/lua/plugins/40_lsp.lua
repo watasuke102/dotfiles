@@ -35,7 +35,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
           vim.lsp.buf.format({
             bufnr = args.buf,
             id = client.id,
-            timeout_ms = 3000
+            timeout_ms = 3000,
+            filter = function(client) return client.name ~= "ts_ls" end,
           })
         end,
       })
@@ -70,14 +71,23 @@ return {
       --[
       -- Note: default mapping is as follows:
       --   * grn   => vim.lsp.buf.rename()
+      --   * gra   => vim.lsp.buf.code_action()
+      --   * <C-s> => vim.lsp.buf.signature_help()
       --   * grr   => vim.lsp.buf.references()
-      --   * gra   => vim.lsp.buf.code_action()
-      --   * gra   => vim.lsp.buf.code_action()
       --   * gri   => vim.lsp.buf.implementation()
       --   * gO    => vim.lsp.buf.document_symbol()
-      --   * <C-s> => vim.lsp.buf.signature_help()
       --]
     },
   },
   { "neovim/nvim-lspconfig" },
+  {
+    "nvimtools/none-ls.nvim",
+    opts = function(_, opts)
+      -- TODO: are there any ways to enable if something installed by Mason?
+      local nls = require("null-ls")
+      opts.sources = {
+        nls.builtins.formatting.prettier,
+      }
+    end,
+  },
 }

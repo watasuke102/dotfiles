@@ -21,17 +21,17 @@ return {
     },
     cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus" },
     keys = function()
-      return { { "<C-b>", function()
+      return { { "<C-l>", function()
         local api = require("nvim-tree.api")
         if not api.tree.is_visible() then
-          api.tree.open({find_file = true})
+          api.tree.open({ find_file = true })
           return
         end
         -- close if tree is already focused
         if api.tree.is_tree_buf() then
           api.tree.close()
         else
-          api.tree.focus({find_file = true})
+          api.tree.focus({ find_file = true })
         end
       end
       } }

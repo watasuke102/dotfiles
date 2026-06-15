@@ -29,7 +29,7 @@ alsa-utils brightnessctl cliphist dex dunst flameshot hyprland hyprpaper swayloc
 ### ags
 
 ```
-aylurs-gtk-shell libadwaita inotify-tools
+aylurs-gtk-shell dart-sass inotify-tools libadwaita libastal-battery-git-debug libastal-bluetooth-git-debug libastal-hyprland-git-debug libastal-network-git-debug libastal-powerprofiles-git-debug libastal-tray-git-debug libastal-wireplumber-git-debug upower
 ```
 
 ### other

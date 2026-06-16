@@ -3,7 +3,7 @@ selected=$(echo -e "Logout\nShutdown\nReboot\nSuspend\nLock Screen" | wofi -i --
 
 case "$selected" in
   "Logout")
-    hyprctl dispatch exit
+    hyprctl dispatch 'hl.dsp.exit()'
     ;;
   "Shutdown")
     systemctl poweroff
@@ -15,7 +15,7 @@ case "$selected" in
     systemctl suspend
     ;;
   "Lock Screen")
-    swaylock
+    hyprlock
     ;;
   *);;
 esac

@@ -1,9 +1,9 @@
 gui:
   nerdFontsVersion: "3"
   mouseEvents: false
-  language: 'en'
-
+  language: "en"
 git:
+  overrideGpg: true
   autoForwardBranches: none
   branchLogCmd: "git log --color=always --decorate --pretty='%Cgreen%as%Creset %Cblue%h%Creset %s'"
 

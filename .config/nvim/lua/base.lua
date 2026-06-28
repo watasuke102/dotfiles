@@ -31,3 +31,16 @@ vim.opt.completeopt = {
   "menuone", -- show menu even if only one candidate
   "noinsert",
 }
+
+-- :h cmdline-autocompletion
+vim.api.nvim_create_autocmd("CmdlineChanged", {
+  pattern = { ":" },
+  callback = function()
+    vim.fn.wildtrigger()
+  end,
+})
+--	First press: show 'wildmenu' without completing or selecting
+-- Second press: cycle full matches >vim
+vim.opt.wildmode = { "noselect", "full" }
+-- completion by PopUpMenu (pum)
+vim.opt.wildoptions = "pum"

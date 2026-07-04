@@ -21,7 +21,7 @@ require("land.monitors")
 hl.config({
   input = {
     touchpad = {
-      natural_scroll = false,
+      natural_scroll = true,
     },
     kb_layout = "us",
     kb_variant = "",

@@ -32,11 +32,18 @@ vim.opt.completeopt = {
   "noinsert",
 }
 
+-- disable completion for :s, :%s, :'<,'>s
+-- these are just few range specifiers! (but I've never used one except these)
+-- see `:h :,` for more
+local completion_re = vim.regex([[^\('<,'>\|%\)\?s/]])
 -- :h cmdline-autocompletion
 vim.api.nvim_create_autocmd("CmdlineChanged", {
   pattern = { ":" },
   callback = function()
-    vim.fn.wildtrigger()
+    local cmd = vim.fn.getcmdline()
+    if completion_re:match_str(cmd) == nil then
+      vim.fn.wildtrigger()
+    end
   end,
 })
 --	First press: show 'wildmenu' without completing or selecting

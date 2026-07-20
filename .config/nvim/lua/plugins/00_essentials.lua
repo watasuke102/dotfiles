@@ -32,12 +32,7 @@ return {
         lualine_c = { { 'filename', path = 1 } },
       },
       tabline = {
-        lualine_a = {
-          {
-            'buffers',
-            symbols = { alternate_file = '' }
-          }
-        }
+        lualine_a = { { 'filename', path = 2 } }
       },
     }
   },

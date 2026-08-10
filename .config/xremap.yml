@@ -2,10 +2,10 @@ virtual_modifiers:
   - CapsLock
 keymap:
   - remap:
-      Home:     reserved
-      End:      reserved
-      PageUp:   reserved
-      PageDown: reserved
+      Home:     []
+      End:      []
+      PageUp:   []
+      PageDown: []
       Capslock-h: { with_mark: left }
       Capslock-j: { with_mark: down }
       Capslock-k: { with_mark: up }
@@ -14,4 +14,7 @@ keymap:
       Capslock-s: { with_mark: pagedown }
       Capslock-a: { with_mark: home }
       Capslock-d: { with_mark: end }
+      # treated as brightness / volume control keys (WHY?), so disable them
+      KEY_RO:  []
+      KEY_YEN: []
     exact_match: false

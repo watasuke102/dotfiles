@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 
-outputs=(
-  "HDMI-1"
-  "DP-1"
-)
 positions=("up" "down" "left" "right" "ONLY")
 
 options=""
-for output in "${outputs[@]}"; do
-  for pos in "${positions[@]}"; do
-    options+=$(printf "%6s -> %s" "${output}" "auto-${pos}\n")
-  done
+for pos in "${positions[@]}"; do
+  options+=$(printf "%s" "${output}" "auto-${pos}\n")
 done
 options+="mirror"
 
@@ -33,16 +27,11 @@ EOF
   exit
 fi
 
-
-output=$(echo "$selected" | awk '{print $1}')
-position=$(echo "$selected" | awk '{print $3}')
-
-
-if [ "$position" = "auto-ONLY" ]; then
+if [ "$selected" = "auto-ONLY" ]; then
   echo "only"
   cat << EOF > "$TARGET_FILE"
 hl.monitor({
-  output = "$output",
+  output = "",
   mode = "preferred",
   position = "auto",
   scale = 1,
@@ -53,12 +42,12 @@ hl.monitor({
 })
 EOF
 else
-  echo "not only but $position"
+  echo "not only but $selected"
   cat << EOF > "$TARGET_FILE"
 hl.monitor({
-  output = "$output",
+  output = "",
   mode = "preferred",
-  position = "$position",
+  position = "$selected",
   scale = 1,
 })
 EOF

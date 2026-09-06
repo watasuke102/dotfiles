@@ -94,6 +94,11 @@ comp() {
   echo "${separator}"
 }
 
+_comp() {
+  _arguments '*:source file:_files -g "*.(c|cpp)"'
+}
+compdef _comp comp
+
 local git_arg() {
   check_arg $# 1 || return 1
   repo="$1"
@@ -120,4 +125,3 @@ clone() {
   echo -e "\e[30;42m>> git clone https://github.com/$repo $arg\e[m"
   eval git clone https://github.com/$repo $arg
 }
-

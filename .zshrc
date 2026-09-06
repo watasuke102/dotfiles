@@ -12,10 +12,15 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# do not delay compinit loading so that later scripts can use compdef
+autoload -Uz compinit
+compinit -C
+zstyle ':completion:*' menu select
+
 # lucid: surpress message that tells the plugin is loaded
 # light-mode: load plugins as `light`; disables plugin reporting
 zinit wait'0a' lucid light-mode for \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; zstyle ':completion:*' menu select" \
+  atinit'zicdreplay' \
     zdharma-continuum/fast-syntax-highlighting \
   blockf \
     zsh-users/zsh-history-substring-search \
@@ -39,6 +44,10 @@ HISTFILE=~/.histfile
 HISTSIZE=1024
 # on file
 SAVEHIST=102400
+# history related options
+setopt share_history
+setopt hist_ignore_all_dups  # do not record the command if there is the same command
+setopt hist_find_no_dups
 
 ## keymapping
 # Home
@@ -88,4 +97,3 @@ export DEBUGINFOD_URLS=""
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 exist fzf && source <(fzf --zsh)
-

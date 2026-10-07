@@ -22,6 +22,7 @@ hl.config({
   input = {
     touchpad = {
       natural_scroll = true,
+      scroll_factor = 1.5,
     },
     kb_layout = "us",
     kb_variant = "",

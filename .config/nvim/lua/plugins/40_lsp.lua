@@ -87,6 +87,9 @@ return {
       local nls = require("null-ls")
       opts.sources = {
         nls.builtins.formatting.prettier,
+        nls.builtins.formatting.textlint.with({ extra_filetypes = { "tex" } }),
+        nls.builtins.code_actions.textlint.with({ extra_filetypes = { "tex" } }),
+        nls.builtins.diagnostics.textlint.with({ extra_filetypes = { "tex" } }),
       }
     end,
   },
